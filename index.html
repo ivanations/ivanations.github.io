@@ -16,8 +16,8 @@
 <body class="w3-theme-l5">
 
 <div class="w3-top">
-    <div class="w3-bar w3-black w3-left-align w3-large">
-        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Logo</a>
+    <div class="w3-bar w3-white w3-left-align w3-large w3-card">
+        <a href="#" class="w3-bar-item"><img src="img/logo.png" class="w3-image" style="height: 35px;"></a>
         <span class="w3-bar-item w3-padding-large w3-hide-large">LESSON 1.1 &nbsp; GREETINGS</span>
         <span class="w3-bar-item w3-padding-large w3-hide-small w3-hide-medium">LESSON 1.1 &nbsp; GREETINGS AND FAREWELLS: SALUDOS Y DESPEDIDAS</span>
     </div>
@@ -193,7 +193,7 @@
       <p>Make the reading and select the correct option:</p>
       <hr>
       <div class="w3-panel w3-blue w3-card-4">
-          <p><a href="#" onclick="myFunction2()"><i class="fa fa-play"></i></a></p>
+          <p><a href="#" class="w3-large" onclick="myFunction2()"><i class="fa fa-play-circle"></i></a></p>
           <p id="pa">Greeting is an important part of our socialization with other people. Before 12:00 PM we say “good morning”. Among 12:00 PM and 6:00PM we say “good afternoon” and at night, when we greet, we say “good evening”, but in farewell, we say “good night”. It is important to highlight that while it is night and before going to bed, in a greet we say good evening although it is 2 o’clock AM. Just when we have slept and gotten up we can say “good morning” even it is night after 12 AM.</p>
       </div>
       <br>
@@ -237,11 +237,27 @@
   <div class="w3-container">
       <h1>Write all what you hear</h1>
       <hr>
-      <p><a href="#" onclick="myFunction(2,res)"><i class="fa fa-play"></i></a><input class="w3-input w3-round w3-border" type="text"></p>
-      <p><a href="#" onclick="myFunction(3,res)"><i class="fa fa-play"></i></a><input class="w3-input w3-round w3-border" type="text"></p>
-      <p><a href="#" onclick="myFunction(4,res)"><i class="fa fa-play"></i></a><input class="w3-input w3-round w3-border" type="text"></p>
+      <p><a href="#" class="w3-large" onclick="myFunction(2,res)"><i class="fa fa-play-circle"></i></a><input class="w3-input w3-round w3-border" type="text"></p>
+      <p><a href="#" class="w3-large" onclick="myFunction(3,res)"><i class="fa fa-play-circle"></i></a><input class="w3-input w3-round w3-border" type="text"></p>
+      <p><a href="#" class="w3-large" onclick="myFunction(4,res)"><i class="fa fa-play-circle"></i></a><input class="w3-input w3-round w3-border" type="text"></p>
       <hr>
       <p class="w3-center"><button class="w3-button w3-theme-d4 w3-round">Comprobar</button></p>
+    </div>
+</div>
+
+<br><br>
+
+<!--Translate Exercises-->
+<div class="w3-card w3-round w3-white">
+  <div class="w3-container">
+      <h1>Speaking Exercises</h1>
+      <p>Pronounce all the expressions you see bellow:</p>
+      <hr>
+      <p><a href="#" onclick="runSpeechRecognition()"><i class="fa fa-microphone"></i></a>&nbsp;&nbsp;How are you?</p>
+      <p><a href="#" onclick="runSpeechRecognition()"><i class="fa fa-microphone"></i></a>&nbsp;&nbsp;I’m fine thank you.</p>
+      <p><a href="#" onclick="runSpeechRecognition()"><i class="fa fa-microphone"></i></a>&nbsp;&nbsp;I’m well and you?</p>
+      <p id="output" class="w3-text-blue"></p>
+      <br>
     </div>
 </div>
 
@@ -370,6 +386,69 @@ pitch.onchange = function () {
 rate.onchange = function () {
   rateValue.textContent = rate.value;
 };
+
+
+//////////////////////////////////////////
+
+let recognition;
+
+function runSpeechRecognition() {
+  event.preventDefault();
+  var output = document.getElementById("output");
+
+  // new speech recognition object
+  var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+  recognition = new SpeechRecognition();
+
+  // Recogniser doesn't stop listening even if the user pauses
+  recognition.continuous = false;
+	recognition.lang = 'en-US';
+	recognition.interimResults = true;
+
+  // This runs when the speech recognition service returns result
+  recognition.onresult = function(event) {
+                    /*
+					let transcript = event.results[0][0].transcript;
+          let confidence = event.results[0][0].confidence;
+          output.innerHTML = "<b>Text:</b> " + transcript + "<br/> <b>Confidence:</b> " + confidence*100+"%";
+          output.classList.remove("hide");*/
+
+					output.innerHTML ="";
+					let len = event.results.length;
+					for (let i = event.resultIndex; i < len; i++) {
+						/*if (event.results[i].isFinal) {
+							output.innerHTML = event.results[i][0].transcript + ' (Confidence: ' + event.results[i][0].confidence + ')';
+						} else {
+							output.innerHTML+= event.results[i][0].transcript;
+						}*/
+						output.innerHTML+= event.results[i][0].transcript;
+					}
+					/**/
+  };
+
+  recognition.addEventListener('error', function(event) {
+		console.log('Speech recognition error detected: ' + event.error);
+		runSpeechRecognition();
+	});
+
+  recognition.addEventListener('error', runSpeechRecognition);
+
+  // This runs when the speech recognition service starts
+  recognition.onstart = function() {
+    output.innerHTML = "<small>listening, please speak...</small>";
+  };
+
+  recognition.onspeechend = function() {
+    recognition.stop();
+  }
+
+  recognition.start();
+}
+
+function stopSpeechRecognition() {
+	console.log("stoped");
+	recognition.stop();
+}
 
 
 </script>
