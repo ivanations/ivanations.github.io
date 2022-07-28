@@ -325,16 +325,33 @@ function speak(txt) {
     };
 
     const selectedOption = voiceSelect.selectedOptions[0].getAttribute("data-name");
+    
+    //console.log(voices);
+    /*for (let i = 0; i < voices.length; i++) {
+      if (voices[i].name === "Microsoft Zira - English (United States)") {
+        console.log(voices[i].name);
+      }
+    }*/
 
     for (let i = 0; i < voices.length; i++) {
       if (voices[i].name === selectedOption) {
+      //if (voices[i].name == "Microsoft Zira - English (United States)") {
+        console.log(voices[i].name);
         utterThis.voice = voices[i];
         break;
       }
+      /*if (voices[i].name == "Microsoft Zira Desktop - English (United States)") {
+        console.log(voices[i].name);
+        utterThis.voice = voices[i];
+        break;
+      }*/
     }
 
+    utterThis.lang = utterThis.voice.lang
     utterThis.pitch = pitch.value;
     utterThis.rate = rate.value;
+    //utterThis.pitch = 0.6;
+    //utterThis.rate = 0.6;
     synth.speak(utterThis);
 }
 
@@ -357,7 +374,12 @@ function resp2(){
 
 
 function populateVoiceList() {
-  voices = synth.getVoices().sort(function (a, b) {
+
+  let langSubstr = "en-US";
+
+  voices = synth.getVoices().filter(function (v) {
+    return v.lang.replace('_', '-').substring(0, langSubstr.length) === langSubstr
+  }).sort(function (a, b) {
     const aname = a.name.toUpperCase();
     const bname = b.name.toUpperCase();
 
@@ -369,8 +391,8 @@ function populateVoiceList() {
       return +1;
     }
   });
-  const selectedIndex =
-    voiceSelect.selectedIndex < 0 ? 0 : voiceSelect.selectedIndex;
+
+  const selectedIndex = voiceSelect.selectedIndex < 0 ? 0 : voiceSelect.selectedIndex;
   voiceSelect.innerHTML = "";
 
   for (let i = 0; i < voices.length; i++) {
@@ -386,6 +408,8 @@ function populateVoiceList() {
     voiceSelect.appendChild(option);
   }
   voiceSelect.selectedIndex = selectedIndex;
+
+  //console.log(voices);
 }
 
 populateVoiceList();
@@ -403,7 +427,7 @@ rate.onchange = function () {
 };
 
 
-//////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
 
 let recognition;
 
