@@ -333,25 +333,47 @@ function speak(txt) {
       }
     }*/
 
+    
+    utterThis.pitch = 0.6;
+    utterThis.rate = 0.6;
+
     for (let i = 0; i < voices.length; i++) {
-      if (voices[i].name === selectedOption) {
+      //console.log(voices[i].name);
+      /*if (voices[i].name === selectedOption) {
       //if (voices[i].name == "Microsoft Zira - English (United States)") {
         console.log(voices[i].name);
         utterThis.voice = voices[i];
-        break;
-      }
-      /*if (voices[i].name == "Microsoft Zira Desktop - English (United States)") {
+        //break;
+      }*/
+      
+      if (voices[i].name == "Microsoft Guy Online (Natural) - English (United States)") {
         console.log(voices[i].name);
         utterThis.voice = voices[i];
+        utterThis.pitch = 0.9;
+        utterThis.rate = 0.9;
         break;
-      }*/
+      }
+      if (voices[i].name == "Microsoft Zira - English (United States)") {
+        console.log(voices[i].name);
+        utterThis.voice = voices[i];
+        utterThis.pitch = 0.6;
+        utterThis.rate = 0.6;
+        break;
+      }
+      if (voices[i].name == "Microsoft Zira Desktop - English (United States)") {
+        console.log(voices[i].name);
+        utterThis.voice = voices[i];
+        utterThis.pitch = 0.8;
+        utterThis.rate = 0.8;
+        break;
+      }
     }
 
+    
+    //utterThis.pitch = pitch.value;
+    //utterThis.rate = rate.value;
     utterThis.lang = utterThis.voice.lang
-    utterThis.pitch = pitch.value;
-    utterThis.rate = rate.value;
-    //utterThis.pitch = 0.6;
-    //utterThis.rate = 0.6;
+
     synth.speak(utterThis);
 }
 
@@ -487,6 +509,24 @@ function runSpeechRecognition() {
 function stopSpeechRecognition() {
 	console.log("stoped");
 	recognition.stop();
+}
+
+/////////////////////////////////////////////////////////////////////
+
+function getBrowserName() {
+  var browserName = '';
+  var userAgent = navigator.userAgent;
+  (typeof InstallTrigger !== 'undefined') && (browserName = 'Firefox');
+  ( /* @cc_on!@*/ false || !!document.documentMode) && (browserName = 'IE');
+  (!!window.chrome && userAgent.match(/OPR/)) && (browserName = 'Opera');
+  (!!window.chrome && userAgent.match(/Edge/)) && (browserName = 'Edge');
+  (!!window.chrome && !userAgent.match(/(OPR|Edge)/)) && (browserName = 'Chrome');
+
+  /**
+   * Expected returns
+   * Firefox, Opera, Edge, Chrome
+   */
+  return browserName;
 }
 
 
