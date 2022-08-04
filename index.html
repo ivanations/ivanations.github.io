@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+        .vertical {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+        }
+        .caja {
+            height: 60px;
+            line-height: 50px;
+        }
     </style>
     <title>Greetings</title>
 </head>
@@ -37,7 +46,9 @@
 <div id="vocabulary" class="w3-card w3-round w3-white">
     <div class="w3-container">
         <h1>Vocabulary</h1>
-        <p><a href="#" onclick="myFunction(0,res)"><i class="fa fa-play-circle w3-xlarge"></i></a>&nbsp;&nbsp;<span class="w3-large">Listen. Then listen and repeat</span><span class="w3-text-grey">&nbsp; Escucha. Luego escucha y repite</span></p>
+        <div class="caja">
+          <span class="w3-large vertical"><a href="#" onclick="listen(greetings)"><i class="fa fa-play-circle w3-xxlarge"></i></a></span><span class="w3-large vertical">&nbsp;&nbsp;Listen. Then listen and repeat<span class="w3-text-grey w3-medium">&nbsp; Escucha. Luego escucha y repite</span></span>
+        </div>
         <hr>
         <div class="w3-row w3-center">
             <div class="w3-col s4 m4 l4">
@@ -59,7 +70,9 @@
 <div id="vocabulary" class="w3-card w3-round w3-white">
   <div class="w3-container">
       <h1>Vocabulary</h1>
-      <p><a href="#" onclick="myFunction(1,res)"><i class="fa fa-play-circle w3-xlarge"></i></a>&nbsp;&nbsp;<span class="w3-large">Listen. Then listen and repeat</span><span class="w3-text-grey">&nbsp; Escucha. Luego escucha y repite</span></p>
+      <div class="caja">
+        <span class="w3-large vertical"><a href="#" onclick="listen(farewells)"><i class="fa fa-play-circle w3-xxlarge"></i></a></span><span class="w3-large vertical">&nbsp;&nbsp;Listen. Then listen and repeat<span class="w3-text-grey w3-medium">&nbsp; Escucha. Luego escucha y repite</span></span>
+      </div>
       <hr>
       <div class="w3-row w3-center">
           <div class="w3-col s4 m4 l4">
@@ -81,7 +94,9 @@
 <div class="w3-card w3-round w3-white">
     <div class="w3-container">
         <h1>Other Vocabulary</h1>
-        <p><a href="#" onclick="myFunction(0,res)"><i class="fa fa-play-circle w3-xlarge"></i></a>&nbsp;&nbsp;<span class="w3-large">Listen and repeat</span><span class="w3-text-grey">&nbsp; Escucha y repite</span></p>
+        <div class="caja">
+          <span class="w3-large vertical"><a href="#" onclick="myFunction(0,res)"><i class="fa fa-play-circle w3-xxlarge"></i></a></span><span class="w3-large vertical">&nbsp;&nbsp;Listen and repeat<span class="w3-text-grey w3-medium">&nbsp; Escucha y repite</span></span>
+        </div>
         <hr>
         <p class="w3-large">Greetings and some possible answers:<br>
           <span class="w3-text-orange">Greeting: </span><b>Hi!</b><br>
@@ -196,7 +211,7 @@
       <p><span class="w3-large">Make the reading and select the correct option</span><span class="w3-text-grey">&nbsp; Leer y seleccionar la opción correcta</span></p>
       <hr>
       <div class="w3-panel w3-purple w3-card-4">
-          <p><a href="#" class="w3-xlarge" onclick="myFunction2()"><i class="fa fa-play-circle"></i></a></p>
+          <p><a href="#" class="w3-xlarge" onclick="myFunction2()"><i class="fa fa-play-circle w3-xxlarge"></i></a></p>
           <p id="pa">Greeting is an important part of our socialization with other people. Before 12:00 PM we say “good morning”. Among 12:00 PM and 6:00PM we say “good afternoon” and at night, when we greet, we say “good evening”, but in farewell, we say “good night”. It is important to highlight that while it is night and before going to bed, in a greet we say good evening although it is 2 o’clock AM. Just when we have slept and gotten up we can say “good morning” even it is night after 12 AM.</p>
       </div>
       <br>
@@ -245,15 +260,15 @@
       <p><span class="w3-large">Listen and write all the expressions</span><span class="w3-text-grey">&nbsp; Escucha y escribe las siguientes expresiones</span></p>
       <hr>
       <div class="w3-row">
-        <div class="w3-col" style="width:50px"><p><a href="#" class="w3-xlarge" onclick="myFunction(2,res)"><i class="fa fa-play-circle"></i></a></p></div>
+        <div class="w3-col" style="width:50px"><p><a href="#" class="w3-xlarge" onclick="myFunction(2,res)"><i class="fa fa-play-circle w3-xxlarge"></i></a></p></div>
         <div class="w3-rest"><p><input class="w3-input w3-round w3-border" type="text"></p></div>
       </div>
       <div class="w3-row">
-        <div class="w3-col" style="width:50px"><p><a href="#" class="w3-xlarge" onclick="myFunction(3,res)"><i class="fa fa-play-circle"></i></a></p></div>
+        <div class="w3-col" style="width:50px"><p><a href="#" class="w3-xlarge" onclick="myFunction(3,res)"><i class="fa fa-play-circle w3-xxlarge"></i></a></p></div>
         <div class="w3-rest"><p><input class="w3-input w3-round w3-border" type="text"></p></div>
       </div>
       <div class="w3-row">
-        <div class="w3-col" style="width:50px"><p><a href="#" class="w3-xlarge" onclick="myFunction(4,res)"><i class="fa fa-play-circle"></i></a></p></div>
+        <div class="w3-col" style="width:50px"><p><a href="#" class="w3-xlarge" onclick="myFunction(4,res)"><i class="fa fa-play-circle w3-xxlarge"></i></a></p></div>
         <div class="w3-rest"><p><input class="w3-input w3-round w3-border" type="text"></p></div>
       </div>
       <br>
@@ -296,6 +311,8 @@ const par = "Greeting is an important part of our socialization with other peopl
 const des = ["An accident happened between two cars travelling in the same direction. One car was travelling at 30 miles per hour. As the driver was rounding the corner, he drove straight into another car which was on wrong side of the road. The driver lost control of the car and ploughed into a tree","As the driver went through a red light, he drove straight into oncoming traffic","A lorry jackknifed, spilling its load over the road","A car skidded on a wet surface and the driver lost control","A brakes failed","The driver was under the influence of alcohol","The driver was on his mobile phone at the same time","The accident was due to pilot","The car was speeding"];
 const voc = ["a collision","a mid-air collision","a head-on collision","a car crash","a derailment","a multiple or a pile-up"];
 const res = ["Good morning. Good afternoon. Good evening.", "see you later. see you soon. good night","How are you?","I’m fine, thank you","I’m well, and you?"];
+const greetings = ["Good morning. Good afternoon. Good evening. Now listen, and repeat","Good morning","Good afternoon","Good evening"];
+const farewells = ["see you later. see you soon. Good night. Now listen, and repeat","See you later","See you soon","Good night"];
 
 let voices = [];
 
@@ -321,39 +338,8 @@ function speak(txt) {
     utterThis.voice = voices[0];
     utterThis.pitch = 0.6;
     utterThis.rate = 0.6;
-    
 
-    for (let i = 0; i < voices.length; i++) {
-      //console.log(voices[i].name);
-      /*if (voices[i].name === selectedOption) {
-      //if (voices[i].name == "Microsoft Zira - English (United States)") {
-        console.log(voices[i].name);
-        utterThis.voice = voices[i];
-        //break;
-      }*/
-      
-      if (voices[i].name == "Microsoft Guy Online (Natural) - English (United States)") {
-        console.log(voices[i].name);
-        utterThis.voice = voices[i];
-        utterThis.pitch = 0.9;
-        utterThis.rate = 0.9;
-        break;
-      }
-      if (voices[i].name == "Microsoft Zira - English (United States)") {
-        console.log(voices[i].name);
-        utterThis.voice = voices[i];
-        utterThis.pitch = 0.6;
-        utterThis.rate = 0.6;
-        break;
-      }
-      if (voices[i].name == "Microsoft Zira Desktop - English (United States)") {
-        console.log(voices[i].name);
-        utterThis.voice = voices[i];
-        utterThis.pitch = 0.8;
-        utterThis.rate = 0.8;
-        break;
-      }
-    }
+    voz(utterThis);
 
     
     //utterThis.pitch = pitch.value;
@@ -364,6 +350,29 @@ function speak(txt) {
     synth.speak(utterThis);
 }
 
+// funcion para listen and repead con retraso en las demas palabras
+function listen(txt){
+    event.preventDefault();
+    const vozThis = new SpeechSynthesisUtterance(txt[0]);
+    vozThis.onerror = function (event) {
+      console.error("SpeechSynthesisUtterance.onerror");
+    };
+    vozThis.voice = voices[0];
+    vozThis.pitch = 0.6;
+    vozThis.rate = 0.6;
+    voz(vozThis);
+    vozThis.lang = "en-US";
+    vozThis.onend = function (event) {
+      time = 1000;
+      console.log("jejejeje");
+      for (let x = 1; x < txt.length; x++) {
+        setTimeout(speak, time, txt[x]);
+        time += 4000;
+        console.log("fijado: "+time);
+      }
+    };
+    synth.speak(vozThis);
+}
 
 function myFunction(num,arr){
     event.preventDefault();
@@ -425,6 +434,7 @@ populateVoiceList();
 if (speechSynthesis.onvoiceschanged !== undefined) {
   speechSynthesis.onvoiceschanged = populateVoiceList;
 }
+
 /*
 pitch.onchange = function () {
   pitchValue.textContent = pitch.value;
@@ -433,6 +443,33 @@ pitch.onchange = function () {
 rate.onchange = function () {
   rateValue.textContent = rate.value;
 };*/
+
+// funcion para elegir la voz deseada con sus parametros
+function voz(vozThis){
+  for (let i = 0; i < voices.length; i++) {
+      if (voices[i].name == "Microsoft Guy Online (Natural) - English (United States)") {
+        console.log(voices[i].name);
+        vozThis.voice = voices[i];
+        vozThis.pitch = 0.9;
+        vozThis.rate = 0.9;
+        break;
+      }
+      if (voices[i].name == "Microsoft Zira - English (United States)") {
+        console.log(voices[i].name);
+        vozThis.voice = voices[i];
+        vozThis.pitch = 0.6;
+        vozThis.rate = 0.6;
+        break;
+      }
+      if (voices[i].name == "Microsoft Zira Desktop - English (United States)") {
+        console.log(voices[i].name);
+        vozThis.voice = voices[i];
+        vozThis.pitch = 0.8;
+        vozThis.rate = 0.8;
+        break;
+      }
+    }
+}
 
 
 ////////////////////////////////////////////////////////////////////////
