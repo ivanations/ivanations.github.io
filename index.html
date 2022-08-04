@@ -333,9 +333,10 @@ function speak(txt) {
       }
     }*/
 
-    
+    utterThis.voice = voices[0];
     utterThis.pitch = 0.6;
     utterThis.rate = 0.6;
+    
 
     for (let i = 0; i < voices.length; i++) {
       //console.log(voices[i].name);
