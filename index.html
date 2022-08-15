@@ -155,14 +155,17 @@
       <h1>Grammar Exercises</h1>
       <p><span class="w3-large">Fill in the blanks with the words given above</span><span class="w3-text-grey">&nbsp; Selecciona la palabra correcta</span></p>
       <hr>
-      <p>a. <select><option value="value1"></option><option value="value2">Good</option><option value="value3">Bad</option><option value="value4">Are</option></select> morning!</p>
-      <p>b. How <select><option value="value1"></option><option value="value2">Good</option><option value="value3">Bad</option><option value="value4">Are</option></select> you?</p>
-      <p>c. How is everything? <select><option value="value1"></option><option value="value2">How</option><option value="value3">Everything</option><option value="value4">I am</option></select> is good.</p>
-      <p>d. <select><option value="value1"></option><option value="value2">Are</option><option value="value3">What's</option><option value="value4">you</option></select> up?</p>
-      <p>e. My <select><option value="value1"></option><option value="value2">family</option><option value="value3">are</option><option value="value4">good</option></select> is wrong</p>
-      <p>f. <select><option value="value1"></option><option value="value2">Family</option><option value="value3">Bad</option><option value="value4">I'am</option></select> thirsty.</p>
+      <form id="dataForm_grammar">
+        <p>a. <select name="uno"><option value="value1"></option><option value="good">Good</option><option value="value3">Bad</option><option value="value4">Are</option></select> morning!</p>
+        <p>b. How <select name="dos"><option value="value1"></option><option value="value2">Good</option><option value="value3">Bad</option><option value="are">Are</option></select> you?</p>
+        <p>c. How is everything? <select name="tres"><option value="value1"></option><option value="value2">How</option><option value="everything">Everything</option><option value="value4">I am</option></select> is good.</p>
+        <p>d. <select name="cuatro"><option value="v1"></option><option value="v2">Are</option><option value="what">What's</option><option value="v4">you</option></select> up?</p>
+        <p>e. My <select name="cinco"><option value="value1"></option><option value="family">family</option><option value="value3">are</option><option value="value4">good</option></select> is wrong</p>
+        <p>f. <select name="seis"><option value="value1"></option><option value="value2">Family</option><option value="value3">Bad</option><option value="Iam">I'am</option></select> thirsty.</p>
+      </form>
       <hr>
-      <p class="w3-center"><button class="w3-button w3-theme-d4 w3-round">Comprobar</button></p>
+      <div class="w3-center w3-text-purple" id="graanswer"></div>
+      <p class="w3-center"><input class="w3-button w3-theme-d4 w3-round" value="Comprobar" type="submit" id="dataForm_grammar_Button"></p>
     </div>
 </div>
 
@@ -174,13 +177,19 @@
       <h1>Writing Exercises</h1>
       <p><span class="w3-large">Write in correct order all the expressions</span><span class="w3-text-grey">&nbsp; Escribe en el orden correcto las siguientes expresiones</span></p>
       <hr>
-      <p>a)	You are how? &nbsp; <input class="w3-input w3-round w3-border" type="text"></p>
-      <p>b)	You, and good? &nbsp; <input class="w3-input w3-round w3-border" type="text"></p>
-      <p>c)	Fine, I’m thanks &nbsp; <input class="w3-input w3-round w3-border" type="text"></p>
-      <p>d)	Is how everything? &nbsp; <input class="w3-input w3-round w3-border" type="text"></p>
-      <p>h)	Good is my family. &nbsp; <input class="w3-input w3-round w3-border" type="text"></p>
+      <p>a)	You are how? &nbsp; <input class="w3-input w3-round w3-border" type="text" id="wri1">
+      <span class="w3-text-red" id="errwri1"></span></p>
+      <p>b)	You, and good? &nbsp; <input class="w3-input w3-round w3-border" type="text" id="wri2">
+      <span class="w3-text-red" id="errwri2"></span></p>
+      <p>c)	Fine, I’m thanks &nbsp; <input class="w3-input w3-round w3-border" type="text" id="wri3">
+      <span class="w3-text-red" id="errwri3"></span></p>
+      <p>d)	Is how everything? &nbsp; <input class="w3-input w3-round w3-border" type="text" id="wri4">
+      <span class="w3-text-red" id="errwri4"></span></p>
+      <p>h)	Good is my family. &nbsp; <input class="w3-input w3-round w3-border" type="text" id="wri5">
+      <span class="w3-text-red" id="errwri5"></span></p>
       <hr>
-      <p class="w3-center"><button class="w3-button w3-theme-d4 w3-round">Comprobar</button></p>
+      <div class="w3-center w3-text-purple" id="wrianswer"></div>
+      <p class="w3-center"><button class="w3-button w3-theme-d4 w3-round" onclick="writting_exercise()">Comprobar</button></p>
     </div>
 </div>
 
@@ -192,13 +201,19 @@
       <h1>Translate Exercises</h1>
       <p><span class="w3-large">Translate all the expressions</span><span class="w3-text-grey">&nbsp; Traduce las siguientes expresiones</span></p>
       <hr>
-      <p>a)	Mi familia está bien &nbsp; <input class="w3-input w3-round w3-border" type="text"></p>
-      <p>b)	Estoy bien. ¿Y tú? &nbsp; <input class="w3-input w3-round w3-border" type="text"></p>
-      <p>c)	Tengo sed &nbsp; <input class="w3-input w3-round w3-border" type="text"></p>
-      <p>d)	Estoy triste &nbsp; <input class="w3-input w3-round w3-border" type="text"></p>
-      <p>e)	¿Como esta todo? &nbsp; <input class="w3-input w3-round w3-border" type="text"></p>
+      <p>a)	Mi familia está bien &nbsp; <input class="w3-input w3-round w3-border" type="text" id="trans1">
+        <span class="w3-text-red" id="errtrans1"></span></p>
+      <p>b)	Estoy bien. ¿Y tú? &nbsp; <input class="w3-input w3-round w3-border" type="text" id="trans2">
+        <span class="w3-text-red" id="errtrans2"></span></p>
+      <p>c)	Tengo sed &nbsp; <input class="w3-input w3-round w3-border" type="text" id="trans3">
+        <span class="w3-text-red" id="errtrans3"></span></p>
+      <p>d)	Estoy triste &nbsp; <input class="w3-input w3-round w3-border" type="text" id="trans4">
+        <span class="w3-text-red" id="errtrans4"></span></p>
+      <p>e)	¿Como esta todo? &nbsp; <input class="w3-input w3-round w3-border" type="text" id="trans5">
+        <span class="w3-text-red" id="errtrans5"></span></p>
       <hr>
-      <p class="w3-center"><button class="w3-button w3-theme-d4 w3-round">Comprobar</button></p>
+      <div class="w3-center w3-text-purple" id="transanswer"></div>
+      <p class="w3-center"><button class="w3-button w3-theme-d4 w3-round" onclick="translate_exercise()">Comprobar</button></p>
     </div>
 </div>
 
@@ -215,69 +230,82 @@
           <p id="pa">Greeting is an important part of our socialization with other people. Before 12:00 PM we say “good morning”. Among 12:00 PM and 6:00PM we say “good afternoon” and at night, when we greet, we say “good evening”, but in farewell, we say “good night”. It is important to highlight that while it is night and before going to bed, in a greet we say good evening although it is 2 o’clock AM. Just when we have slept and gotten up we can say “good morning” even it is night after 12 AM.</p>
       </div>
       <br>
+      <form id="dataForm_Reading">
       <div>
           <p>1) We meet at a breakfast with a friend, we must say:</p>
-          <input class="w3-radio" type="radio" name="gender" value="male" checked><label> Good morning</label>
-          <input class="w3-radio" type="radio" name="gender" value="male" checked><label> Good afternoon</label>
-          <input class="w3-radio" type="radio" name="gender" value="male" checked><label> Good evening</label>
-          <input class="w3-radio" type="radio" name="gender" value="male" checked><label> Good night</label>
+          <input class="w3-radio" type="radio" name="r1" value="0" ><label> Good morning</label><br>
+          <input class="w3-radio" type="radio" name="r1" value="1" ><label> Good afternoon</label><br>
+          <input class="w3-radio" type="radio" name="r1" value="2" ><label> Good evening</label><br>
+          <input class="w3-radio" type="radio" name="r1" value="3" checked><label> Good night</label><br>
       </div>
       <br>
       <div>
           <p>2) The graduation of my soon is at 3:00 o’clock. I see my friend at the place of the graduation and I greet him, saying:</p>
-          <input class="w3-radio" type="radio" name="uno" value="male" checked><label> Good morning</label>
-          <input class="w3-radio" type="radio" name="uno" value="male" checked><label> Good afternoon</label>
-          <input class="w3-radio" type="radio" name="uno" value="male" checked><label> Good evening</label>
-          <input class="w3-radio" type="radio" name="uno" value="male" checked><label> Good night</label>
+          <input class="w3-radio" type="radio" name="r2" value="0" ><label> Good morning</label><br>
+          <input class="w3-radio" type="radio" name="r2" value="1" ><label> Good afternoon</label><br>
+          <input class="w3-radio" type="radio" name="r2" value="2" ><label> Good evening</label><br>
+          <input class="w3-radio" type="radio" name="r2" value="3" checked><label> Good night</label><br>
       </div>
       <br>
       <div>
           <p>3) My girlfriend was at a party with me. I take her to her house and she says goodbye to me when saying:</p>
-          <input class="w3-radio" type="radio" name="dos" value="male" checked><label> Good morning</label>
-          <input class="w3-radio" type="radio" name="dos" value="male" checked><label> Good afternoon</label>
-          <input class="w3-radio" type="radio" name="dos" value="male" checked><label> Good evening</label>
-          <input class="w3-radio" type="radio" name="dos" value="male" checked><label> Good night</label>
+          <input class="w3-radio" type="radio" name="r3" value="0" ><label> Good morning</label><br>
+          <input class="w3-radio" type="radio" name="r3" value="1" ><label> Good afternoon</label><br>
+          <input class="w3-radio" type="radio" name="r3" value="2" ><label> Good evening</label><br>
+          <input class="w3-radio" type="radio" name="r3" value="3" checked><label> Good night</label><br>
       </div>
       <br>
       <div>
           <p>4) I am drinking too much water when a friend of mine sees me. He asks me “how are  you?” and I response:</p>
-          <input class="w3-radio" type="radio" name="tres" value="male" checked><label> I’m sleepy</label>
-          <input class="w3-radio" type="radio" name="tres" value="male" checked><label> I’m thirsty</label>
-          <input class="w3-radio" type="radio" name="tres" value="male" checked><label> I’m sad</label>
-          <input class="w3-radio" type="radio" name="tres" value="male" checked><label> I’m angry</label>
+          <input class="w3-radio" type="radio" name="r4" value="0" ><label> I’m sleepy</label><br>
+          <input class="w3-radio" type="radio" name="r4" value="1" ><label> I’m thirsty</label><br>
+          <input class="w3-radio" type="radio" name="r4" value="2" ><label> I’m sad</label><br>
+          <input class="w3-radio" type="radio" name="r4" value="3" checked><label> I’m angry</label><br>
       </div>
+      </form>
       <hr>
-      <p class="w3-center"><button class="w3-button w3-theme-d4 w3-round">Comprobar</button></p>
+      <div class="w3-center w3-text-purple" id="redanswer"></div>
+      <p class="w3-center"><input class="w3-button w3-theme-d4 w3-round" value="Comprobar" type="submit" id="dataForm_Reading_Button"></p>
   </div>
 </div>
 
 <br><br>
 
-<!--Translate Exercises-->
+<!--Listen Exercises-->
 <div class="w3-card w3-round w3-white">
   <div class="w3-container">
       <h1>Write all what you hear</h1>
       <p><span class="w3-large">Listen and write all the expressions</span><span class="w3-text-grey">&nbsp; Escucha y escribe las siguientes expresiones</span></p>
       <hr>
       <div class="w3-row">
-        <div class="w3-col" style="width:50px"><p><a href="#" class="w3-xlarge" onclick="myFunction(2,res)"><i class="fa fa-play-circle w3-xxlarge"></i></a></p></div>
-        <div class="w3-rest"><p><input class="w3-input w3-round w3-border" type="text"></p></div>
+        <div class="w3-col" style="width:50px"><p><a href="#" class="w3-xlarge" onclick="myFunction(0,lis)"><i class="fa fa-play-circle w3-xxlarge"></i></a></p></div>
+        <div class="w3-rest"><p><input class="w3-input w3-round w3-border" type="text" id="lis1"></p><span class="w3-text-red" id="errlis1"></span></div>
       </div>
       <div class="w3-row">
-        <div class="w3-col" style="width:50px"><p><a href="#" class="w3-xlarge" onclick="myFunction(3,res)"><i class="fa fa-play-circle w3-xxlarge"></i></a></p></div>
-        <div class="w3-rest"><p><input class="w3-input w3-round w3-border" type="text"></p></div>
+        <div class="w3-col" style="width:50px"><p><a href="#" class="w3-xlarge" onclick="myFunction(1,lis)"><i class="fa fa-play-circle w3-xxlarge"></i></a></p></div>
+        <div class="w3-rest"><p><input class="w3-input w3-round w3-border" type="text" id="lis2"></p><span class="w3-text-red" id="errlis2"></span></div>
       </div>
       <div class="w3-row">
-        <div class="w3-col" style="width:50px"><p><a href="#" class="w3-xlarge" onclick="myFunction(4,res)"><i class="fa fa-play-circle w3-xxlarge"></i></a></p></div>
-        <div class="w3-rest"><p><input class="w3-input w3-round w3-border" type="text"></p></div>
+        <div class="w3-col" style="width:50px"><p><a href="#" class="w3-xlarge" onclick="myFunction(2,lis)"><i class="fa fa-play-circle w3-xxlarge"></i></a></p></div>
+        <div class="w3-rest"><p><input class="w3-input w3-round w3-border" type="text" id="lis3"></p><span class="w3-text-red" id="errlis3"></span></div>
       </div>
-      <br>
+      <div class="w3-row">
+        <div class="w3-col" style="width:50px"><p><a href="#" class="w3-xlarge" onclick="myFunction(3,lis)"><i class="fa fa-play-circle w3-xxlarge"></i></a></p></div>
+        <div class="w3-rest"><p><input class="w3-input w3-round w3-border" type="text" id="lis4"></p><span class="w3-text-red" id="errlis4"></span></div>
+      </div>
+      <div class="w3-row">
+        <div class="w3-col" style="width:50px"><p><a href="#" class="w3-xlarge" onclick="myFunction(4,lis)"><i class="fa fa-play-circle w3-xxlarge"></i></a></p></div>
+        <div class="w3-rest"><p><input class="w3-input w3-round w3-border" type="text" id="lis5"></p><span class="w3-text-red" id="errlis5"></span></div>
+      </div>
+      <hr>
+      <div class="w3-center w3-text-purple" id="lisanswer"></div>
+      <p class="w3-center"><button class="w3-button w3-theme-d4 w3-round" onclick="listen_exercise(lis)">Comprobar</button></p>
   </div>
 </div>
 
 <br><br>
 
-<!--Translate Exercises-->
+<!--Speaking Exercises-->
 <div class="w3-card w3-round w3-white">
   <div class="w3-container">
       <h1>Speaking Exercises</h1>
@@ -296,6 +324,7 @@
 </div>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
 
 const synth = window.speechSynthesis;
@@ -306,13 +335,13 @@ const synth = window.speechSynthesis;
 //const rate = document.querySelector("#rate");
 //const rateValue = document.querySelector(".rate-value");
 
-const par = "Greeting is an important part of our socialization with other people. Before 12:00 PM we say “good morning”. Among 12:00 PM and 6:00PM we say “good afternoon” and at night, when we greet, we say “good evening”, but in farewell, we say “good night”. It is important to highlight that while it is night and before going to bed, in a greet we say good evening although it is 2 o’clock AM. Just when we have slept and gotten up we can say “good morning” even it is night after 12 AM.";
-
-const des = ["An accident happened between two cars travelling in the same direction. One car was travelling at 30 miles per hour. As the driver was rounding the corner, he drove straight into another car which was on wrong side of the road. The driver lost control of the car and ploughed into a tree","As the driver went through a red light, he drove straight into oncoming traffic","A lorry jackknifed, spilling its load over the road","A car skidded on a wet surface and the driver lost control","A brakes failed","The driver was under the influence of alcohol","The driver was on his mobile phone at the same time","The accident was due to pilot","The car was speeding"];
-const voc = ["a collision","a mid-air collision","a head-on collision","a car crash","a derailment","a multiple or a pile-up"];
-const res = ["Good morning. Good afternoon. Good evening.", "see you later. see you soon. good night","How are you?","I’m fine, thank you","I’m well, and you?"];
 const greetings = ["Good morning. Good afternoon. Good evening. Now listen, and repeat","Good morning","Good afternoon","Good evening"];
 const farewells = ["see you later. see you soon. Good night. Now listen, and repeat","See you later","See you soon","Good night"];
+const par = "Greeting is an important part of our socialization with other people. Before 12:00 PM we say “good morning”. Among 12:00 PM and 6:00PM we say “good afternoon” and at night, when we greet, we say “good evening”, but in farewell, we say “good night”. It is important to highlight that while it is night and before going to bed, in a greet we say good evening although it is 2 o’clock AM. Just when we have slept and gotten up we can say “good morning” even it is night after 12 AM.";
+
+const lis = ["How are you?","I’m fine, thank you","I’m well, and you?","I’m angry","How is everything?"];
+
+const words = ["Hi","Hello","How are you?","Good. And you?","I’m fine, thanks","I’m well. And you","I’m great","I’m tired","I’m sick","I’m sad","I’m angry","I’m thirsty","How is everything?","Everything is ok","Everything is good","Everything is wrong","What’s up?","Not bad","How’s your family going?","My family is good","My family is wrong"];
 
 let voices = [];
 
@@ -536,22 +565,157 @@ function stopSpeechRecognition() {
 
 /////////////////////////////////////////////////////////////////////
 
-function getBrowserName() {
-  var browserName = '';
-  var userAgent = navigator.userAgent;
-  (typeof InstallTrigger !== 'undefined') && (browserName = 'Firefox');
-  ( /* @cc_on!@*/ false || !!document.documentMode) && (browserName = 'IE');
-  (!!window.chrome && userAgent.match(/OPR/)) && (browserName = 'Opera');
-  (!!window.chrome && userAgent.match(/Edge/)) && (browserName = 'Edge');
-  (!!window.chrome && !userAgent.match(/(OPR|Edge)/)) && (browserName = 'Chrome');
-
-  /**
-   * Expected returns
-   * Firefox, Opera, Edge, Chrome
-   */
-  return browserName;
+// devuelve un array de 5 posiciones sacados de otro array
+// se usa para seleccionar 5 frases random
+function random(arr){
+  let res =[];
+  let limit = 5;
+  if(arr.length < limit) limit = arr.length;
+  let i = 0;
+  while (i < limit) {
+    num = Math.floor(Math.random() * arr.length);
+    a = buscaArr(num,res);
+    if(a==true){
+      res.push(num);
+      i++;
+    }
+  }
+  return res;
 }
 
+console.log(random(greetings));
+
+// busca un elemento dentro de array
+// devuelve true si NO lo encuentra 
+// devuelve false si lo encuentra
+function buscaArr(n,arr){
+  let a = true;
+  for (let x = 0; x < arr.length; x++) {
+      if (n == arr[x]) {
+        a = false;
+        break;
+      }
+  }
+  return a;
+}
+
+///////////////////////////////// Grammar Exercises
+
+$('#dataForm_grammar_Button').on('click', function(e) {
+  e.preventDefault();
+  let dataString = $('#dataForm_grammar').serialize();
+  //console.log('Datos serializados: '+dataString);
+  let res = ["good", "are", "everything", "what", "family", "Iam"];
+  let total = 0;
+  for (let i = 0; i < res.length; i++) {
+    let position = dataString.search(res[i]);
+    if (position != -1) {
+      total++;
+    }
+  }
+  document.getElementById("graanswer").innerHTML = "Respuestas correctas "+total+" de 6";
+}); 
+
+///////////////////////////////// Reaing Exercises
+
+$('#dataForm_Reading_Button').on('click', function(e) {
+  e.preventDefault();
+  let dataString = $('#dataForm_Reading').serialize();
+  //console.log('Datos serializados: '+dataString);
+  let res = ["r1=0","r2=1","r3=3","r4=1"];
+  let total = 0;
+  for (let i = 0; i < 4; i++) {
+    let position = dataString.search(res[i]);
+    if (position != -1) {
+      total++;
+    }
+  }
+  document.getElementById("redanswer").innerHTML = "Respuestas correctas "+total+" de 4";
+});
+
+///////////////////////////////// Writing Exercises
+
+function writting_exercise() {
+  let res = ["how are you","good and you","I am fine thanks","How is everything", "my family is good"];
+  let total = 0;
+  for (let i = 0; i < res.length; i++) {
+    num = i+1;
+    let texto = document.getElementById("wri"+num);
+    let respuesta = limpia_texto(texto.value);
+    let word = limpia_texto(res[i]);
+    let position = respuesta.search(word);
+    if (position != -1) {
+      total++;
+    }else{
+      if(respuesta != ""){
+        document.getElementById("errwri"+num).innerHTML = res[i];
+      }
+    }
+    document.getElementById("wrianswer").innerHTML = "Respuestas correctas "+total+" de 5";
+  }
+}
+
+///////////////////////////////// Translate Exercises
+
+function translate_exercise() {
+  let res = ["my family is good","I'm well and you","I'm thirsty","I'm sad", "how is everything"];
+  let total = 0;
+  for (let i = 0; i < res.length; i++) {
+    num = i+1;
+    let texto = document.getElementById("trans"+num);
+    let respuesta = limpia_texto(texto.value);
+    let word = limpia_texto(res[i]);
+    let position = respuesta.search(word);
+    if (position != -1) {
+      total++;
+    }else{
+      if(respuesta != ""){
+        document.getElementById("errtrans"+num).innerHTML = res[i];
+      }
+    }
+    document.getElementById("transanswer").innerHTML = "Respuestas correctas "+total+" de 5";
+  }
+}
+
+///////////////////////////////// Listen Exercises
+
+function listen_exercise(res) {
+  let total = 0;
+  for (let i = 0; i < res.length; i++) {
+    num = i+1;
+    let texto = document.getElementById("lis"+num);
+    let respuesta = limpia_texto(texto.value);
+    let word = limpia_texto(res[i]);
+    let position = respuesta.search(word);
+    if (position != -1) {
+      total++;
+    }else{
+      if(respuesta != ""){
+        document.getElementById("errlis"+num).innerHTML = res[i];
+      }
+    }
+    document.getElementById("lisanswer").innerHTML = "Respuestas correctas "+total+" de 5";
+  }
+}
+
+function limpia_texto(res){
+  res = res.replace(/,/g, "");
+  res = res.replace(/\./g, "");
+  res = res.replace(/\(/g, "");
+  res = res.replace(/\)/g, "");
+  res = res.replace(/\-/g, " ");
+  res = res.replace(/\:/g, "");
+  res = res.replace(/\“/g, "");
+  res = res.replace(/\”/g, "");
+  res = res.replace(/\"/g, "");
+  res = res.replace(/\;/g, "");
+  res = res.replace(/\!/g, "");
+  res = res.replace(/\?/g, "");
+  res = res.replace(/\//g, "");
+  res = res.replace(/\'/g, "");
+  res = res.replace(/\’/g, "");
+  return res.toLocaleLowerCase();
+}
 
 </script>
     
