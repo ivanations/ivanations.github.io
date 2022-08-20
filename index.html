@@ -18,7 +18,9 @@
         .caja {
             height: 60px;
             line-height: 50px;
-            padding-bottom: 50px;
+        }
+        @media (max-width:600px){
+          h1{font-size:26px}
         }
     </style>
     <title>Greetings</title>
@@ -48,7 +50,7 @@
     <div class="w3-container">
         <h1>Vocabulary</h1>
         <div class="caja">
-          <span class="w3-large vertical"><a href="#" onclick="listen(greetings)"><i class="fa fa-play-circle w3-xxlarge"></i></a></span><span class="w3-large vertical">&nbsp;&nbsp;Listen. Then listen and repeat<span class="w3-text-grey w3-medium">&nbsp; Escucha. Luego escucha y repite</span></span>
+          <span class="w3-large vertical"><a href="#" onclick="listen(greetings)"><i class="fa fa-play-circle w3-xxlarge"></i></a></span><span class="w3-large vertical">&nbsp;&nbsp;Listen. Then listen and repeat<br><span class="w3-text-grey w3-medium">&nbsp; Escucha. Luego escucha y repite</span></span>
         </div>
         <hr>
         <div class="w3-row w3-center">
@@ -72,7 +74,7 @@
   <div class="w3-container">
       <h1>Vocabulary</h1>
       <div class="caja">
-        <span class="w3-large vertical"><a href="#" onclick="listen(farewells)"><i class="fa fa-play-circle w3-xxlarge"></i></a></span><span class="w3-large vertical">&nbsp;&nbsp;Listen. Then listen and repeat<span class="w3-text-grey w3-medium">&nbsp; Escucha. Luego escucha y repite</span></span>
+        <span class="w3-large vertical"><a href="#" onclick="listen(farewells)"><i class="fa fa-play-circle w3-xxlarge"></i></a></span><span class="w3-large vertical">&nbsp;&nbsp;Listen. Then listen and repeat<br><span class="w3-text-grey w3-medium">&nbsp; Escucha. Luego escucha y repite</span></span>
       </div>
       <hr>
       <div class="w3-row w3-center">
@@ -96,7 +98,7 @@
     <div class="w3-container">
         <h1>Other Vocabulary</h1>
         <div class="caja">
-          <span class="w3-large vertical"><a href="#" onclick="myFunction(0,res)"><i class="fa fa-play-circle w3-xxlarge"></i></a></span><span class="w3-large vertical">&nbsp;&nbsp;Listen and repeat<span class="w3-text-grey w3-medium">&nbsp; Escucha y repite</span></span>
+          <span class="w3-large vertical"><a href="#" onclick="myFunction(0,res)"><i class="fa fa-play-circle w3-xxlarge"></i></a></span><span class="w3-large vertical">&nbsp;&nbsp;Listen and repeat<br><span class="w3-text-grey w3-medium">&nbsp; Escucha y repite</span></span>
         </div>
         <hr>
         <p class="w3-large">Greetings and some possible answers:<br>
@@ -111,6 +113,28 @@
           <span class="w3-text-orange">Greeting: </span><b>How’s your family going?</b><br>
           <span class="w3-text-purple">Possible answers: </span><b>My family is good / My family is wrong.</b><br>
         </p>
+    </div>
+</div>
+
+<br><br>
+
+<!--Speaking Exercises-->
+<div class="w3-card w3-round w3-white">
+  <div class="w3-container">
+      <h1>Speaking Exercises</h1>
+      <p><span class="w3-large">Pronounce all the expressions</span><br><span class="w3-text-grey">Pronuncia todas las expresiones</span></p>
+      <hr>
+      <div class="w3-center">
+        <span class="w3-text-blue">1 / 13</span>
+        <div class="caja">
+          <span class="vertical"><a href="#" onclick="" class="w3-text-blue"><i class="fa fa-play-circle w3-xlarge"></i></a></span><span class="w3-xlarge vertical">&nbsp;&nbsp;How are you?</span>
+        </div>
+        <span class="w3-text-grey w3-medium">¿Como estas tu?</span>
+        <hr>
+        <p id="output" class="w3-large w3-text-blue">hello</p>
+        <p><button class="w3-button w3-circle w3-blue"><i class="fa fa-microphone w3-xxlarge"></i></button></p>
+      </div>
+      <br>
     </div>
 </div>
 
@@ -166,7 +190,7 @@
       </form>
       <hr>
       <div class="w3-center w3-text-purple" id="graanswer"></div>
-      <p class="w3-center"><input class="w3-button w3-theme-d4 w3-round" value="Comprobar" type="submit" id="dataForm_grammar_Button"></p>
+      <p class="w3-center"><input class="w3-button w3-theme-d4 w3-round-xlarge" value="Comprobar" type="submit" id="dataForm_grammar_Button"></p>
     </div>
 </div>
 
@@ -190,7 +214,7 @@
       <span class="w3-text-red" id="errwri5"></span></p>
       <hr>
       <div class="w3-center w3-text-purple" id="wrianswer"></div>
-      <p class="w3-center"><button class="w3-button w3-theme-d4 w3-round" onclick="writting_exercise()">Comprobar</button></p>
+      <p class="w3-center"><button class="w3-button w3-theme-d4 w3-round-xlarge" onclick="writting_exercise()">Comprobar</button></p>
     </div>
 </div>
 
@@ -214,7 +238,7 @@
         <span class="w3-text-red" id="errtrans5"></span></p>
       <hr>
       <div class="w3-center w3-text-purple" id="transanswer"></div>
-      <p class="w3-center"><button class="w3-button w3-theme-d4 w3-round" onclick="translate_exercise()">Comprobar</button></p>
+      <p class="w3-center"><button class="w3-button w3-theme-d4 w3-round-xlarge" onclick="translate_exercise()">Comprobar</button></p>
     </div>
 </div>
 
@@ -226,9 +250,9 @@
       <h1>Reading Exercises</h1>
       <p><span class="w3-large">Make the reading and select the correct option</span><span class="w3-text-grey">&nbsp; Leer y seleccionar la opción correcta</span></p>
       <hr>
-      <div class="w3-panel w3-purple w3-card-4">
+      <div class="">
           <p><a href="#" class="w3-xlarge" onclick="myFunction2()"><i class="fa fa-play-circle w3-xxlarge"></i></a></p>
-          <p id="pa">Greeting is an important part of our socialization with other people. Before 12:00 PM we say “good morning”. Among 12:00 PM and 6:00PM we say “good afternoon” and at night, when we greet, we say “good evening”, but in farewell, we say “good night”. It is important to highlight that while it is night and before going to bed, in a greet we say good evening although it is 2 o’clock AM. Just when we have slept and gotten up we can say “good morning” even it is night after 12 AM.</p>
+          <p id="pa" class="w3-serif w3-large"><i>Greeting is an important part of our socialization with other people. Before 12:00 PM we say “good morning”. Among 12:00 PM and 6:00 PM we say “good afternoon” and at night, when we greet, we say “good evening”, but in farewell, we say “good night”. It is important to highlight that while it is night and before going to bed, in a greet we say good evening although it is 2 o’clock AM. Just when we have slept and gotten up we can say “good morning” even it is night after 12 AM.</i></p>
       </div>
       <br>
       <form id="dataForm_Reading">
@@ -266,7 +290,7 @@
       </form>
       <hr>
       <div class="w3-center w3-text-purple" id="redanswer"></div>
-      <p class="w3-center"><input class="w3-button w3-theme-d4 w3-round" value="Comprobar" type="submit" id="dataForm_Reading_Button"></p>
+      <p class="w3-center"><input class="w3-button w3-theme-d4 w3-round-xlarge" value="Comprobar" type="submit" id="dataForm_Reading_Button"></p>
   </div>
 </div>
 
@@ -300,13 +324,13 @@
       </div>
       <hr>
       <div class="w3-center w3-text-purple" id="lisanswer"></div>
-      <p class="w3-center"><button class="w3-button w3-theme-d4 w3-round" onclick="listen_exercise(lis)">Comprobar</button></p>
+      <p class="w3-center"><button class="w3-button w3-theme-d4 w3-round-xlarge" onclick="listen_exercise(lis)">Comprobar</button></p>
   </div>
 </div>
 
 <br><br>
 
-<!--Speaking Exercises-->
+<!--Speaking Exercises
 <div class="w3-card w3-round w3-white">
   <div class="w3-container">
       <h1>Speaking Exercises</h1>
@@ -318,7 +342,8 @@
       <p id="output" class="w3-text-blue"></p>
       <br>
     </div>
-</div>
+</div>-->
+
 
 <br><br><br>
 
