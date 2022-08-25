@@ -19,6 +19,10 @@
             height: 60px;
             line-height: 50px;
         }
+        .caja2 {
+            height: 60px;
+            line-height: 60px;
+        }
         @media (max-width:600px){
           h1{font-size:26px}
         }
@@ -125,14 +129,24 @@
       <p><span class="w3-large">Pronounce all the expressions</span><br><span class="w3-text-grey">Pronuncia todas las expresiones</span></p>
       <hr>
       <div class="w3-center">
-        <span class="w3-text-blue">1 / 13</span>
         <div class="caja">
           <span class="vertical"><a href="#" onclick="" class="w3-text-blue"><i class="fa fa-play-circle w3-xlarge"></i></a></span><span class="w3-xlarge vertical">&nbsp;&nbsp;How are you?</span>
         </div>
         <span class="w3-text-grey w3-medium">¿Como estas tu?</span>
         <hr>
         <p id="output" class="w3-large w3-text-blue">hello</p>
-        <p><button class="w3-button w3-circle w3-blue"><i class="fa fa-microphone w3-xxlarge"></i></button></p>
+        <p>
+          <button class="w3-button w3-circle w3-blue"><i class="fa fa-microphone w3-xxlarge"></i></button>
+        </p>
+        <p>
+          <div class="caja2">
+            <span class="vertical">
+              <button class="w3-circle w3-blue" style="border: none;"><i class="fa fa-arrow-left w3-medium"></i></button>
+              <span class="w3-text-blue">&nbsp; 1 / 13 &nbsp;</span>
+              <button class="w3-circle w3-blue" style="border: none;"><i class="fa fa-arrow-right w3-medium"></i></button>
+            </span>
+          </div>
+        </p>
       </div>
       <br>
     </div>
@@ -419,7 +433,7 @@ function listen(txt){
     vozThis.lang = "en-US";
     vozThis.onend = function (event) {
       time = 1000;
-      console.log("jejejeje");
+      //console.log("jejejeje");
       for (let x = 1; x < txt.length; x++) {
         setTimeout(speak, time, txt[x]);
         time += 4000;
@@ -609,7 +623,7 @@ function random(arr){
   return res;
 }
 
-console.log(random(greetings));
+//console.log(random(greetings));
 
 // busca un elemento dentro de array
 // devuelve true si NO lo encuentra 
