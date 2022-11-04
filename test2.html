@@ -4,12 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revisa</title>
+    <title>Xide</title>
 </head>
 <body>
 
+<form name="submit-form">
+    <input name="nombre" type="text" placeholder="Nombre" required>
+    <input name="apellido" type="text" placeholder="Apellido" required>
+    <button type="submit">Enviar</button>
+</form>
+
 <script>
 
+// enviar fomr
+const scriptURL = 'https://script.google.com/macros/s/AKfycbz_U5u6Zdyi4QvwwhNqcavM-3ctJ2z_A9ZUdMrcMyI81On3yB6ns2L1WjOhHeyDk0LN/exec'
+const form = document.forms['submit-form']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => console.log('Success!', response))
+    .catch(error => console.error('Error!', error.message))
+})
+
+//ID implementacion
+//AKfycbz_U5u6Zdyi4QvwwhNqcavM-3ctJ2z_A9ZUdMrcMyI81On3yB6ns2L1WjOhHeyDk0LN
+
+// aplicacion web
+//https://script.google.com/macros/s/AKfycbz_U5u6Zdyi4QvwwhNqcavM-3ctJ2z_A9ZUdMrcMyI81On3yB6ns2L1WjOhHeyDk0LN/exec
+
+    
+    
+    
+// extraer datos
 const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRRZ1ZGXFSitcXzbMPGgWJjFou8457CY9VaOHn859asop71QT5ggK4yiRg0saGJG-t8RVtHU3I4iiNq/pub?gid=1057543167&single=true&output=tsv";
 
 // Example POST method implementation:
