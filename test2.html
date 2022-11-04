@@ -4,17 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>api rest propia</title>
+    <title>Revisa</title>
 </head>
 <body>
 
 <script>
 
-fetch('https://pvus.000webhostapp.com/datos.json',{ mode: "no-cors" })
-.then(response => response.json())  // convertir a json
-.then(json => console.log(json))    //imprimir los datos en la consola
-.catch(err => console.log('Solicitud fallida', err)); // Capturar errores
-/**/
+const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRRZ1ZGXFSitcXzbMPGgWJjFou8457CY9VaOHn859asop71QT5ggK4yiRg0saGJG-t8RVtHU3I4iiNq/pub?gid=1057543167&single=true&output=tsv";
+
+// Example POST method implementation:
+async function postData(url) {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: 'GET', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer'// no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    //body: JSON.stringify(data) // body data type must match "Content-Type" header
+  });
+  return response.text(); // parses JSON response into native JavaScript objects
+}
+
+postData(url)
+  .then((data) => {
+    console.log(data);
+    let str = data.split("\r\n");
+    for (let i = 0; i < str.length; i++) {
+        str[i]=str[i].split("\t");
+    }
+    console.log(str);
+});
 
 </script>
 </body>
