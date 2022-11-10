@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momo Lending</title>
+</head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<br>
+<div style="max-width:900px; margin: 0 auto;" class="w3-card-4 w3-light-gray w3-round">
+    <div class="w3-container w3-center">
+        <br>
+        <h1>Alquiler Momos (rare)</h1>
+        <br>
+        <div class="w3-left-align"><label class="w3-left-align">Hash Alto total</label></div>
+        <input class="w3-input w3-border w3-round" type="text" id="ht" value="11650159" onchange="myFunction()">
+        <br>
+        <div class="w3-left-align"><label class="w3-left-align">Hash Normal total</label></div>
+        <input class="w3-input w3-border w3-round" type="text" id="hp" value="1629589" onchange="myFunction()">
+        <br>
+        <p>
+        <input class="w3-radio" type="radio" name="rareza" value="4" checked>
+        <label>Rare</label>
+        </p>
+        <p>
+        <input class="w3-radio" type="radio" name="rareza" value="5">
+        <label>Epic</label>
+        </p>
+        <br>
+        <button class="w3-button w3-black w3-round" onclick="run()" id="buscar">Buscar</button>
+        <br>
+        <br>
+        <div id="result"></div>
+        <br>
+        <br>
+    </div>
+</div>
+
+<br>
+<br>
+
+<script>
+
+let len = 0;
+let len2 = 0;
+let res = [];
+let hp = document.getElementById("hp").value;
+let ht = document.getElementById("ht").value;
+let mbox = 0;
+let mec = 0;
+
+fetch("https://priceapi.mobox.io/kline/usdt?coins=[%22mbox%22,%22mec%22]")
+.then(response => response.json())
+.then((res) => {
+    mbox = res.data.mbox.price;
+    mec = res.data.mec.price;
+    console.log(mbox,mec);
+})
+.catch(err => console.log('Solicitud fallida', err));
+
+async function run(){
+    console.log("hola");
+    res = [];
+
+    
+    
+    let element = document.getElementById("buscar");
+    element.classList.add("w3-disabled");
+    document.getElementById("result").innerHTML = "";
+    const l = 2000;
+    let type = document.querySelector('input[name="rareza"]:checked').value;
+    
+    fetch("https://nftapi.mobox.io/momo_renter/search/BNB?page=1&limit="+l+"&category=&vType="+type+"&sort=-time&rentDays=")
+    .then(response => response.json())
+    .then((obj) => {
+        len = obj.list.length;
+        //console.log(obj.list);
+        for (let i = 0; i < len; i++) {
+
+            //precio
+            let p = obj.list[i].rentPrice/1000000000;
+
+            //indices
+            let ind = obj.list[i].lvHashrate / p;
+            let ind2 = obj.list[i].hashrate / p;
+
+            // rentabilidad
+            let rena = (24000/ht) * obj.list[i].lvHashrate;
+            rena = rena*mec*3;
+            rena = rena/p;
+
+            // rentabilidad
+            let renb = (24000/hp) * obj.list[i].hashrate;
+            renb = renb*mec*3;
+            renb = renb/p;
+
+            res.push([obj.list[i].lvHashrate, obj.list[i].hashrate, p, rena, renb, i, obj.list[i].rentDays, ind, ind2]);
+        }
+
+        element.classList.remove("w3-disabled");
+        len2 = res.length;
+        imprime(res);
+    })
+    .catch((err) => {
+        element.classList.remove("w3-disabled");
+        document.getElementById("result").innerHTML = 'Solicitud fallida: '+err;
+        console.log('Solicitud fallida', err);
+    });
+}
+
+function imprime(arr){
+    let a = "<table class='w3-table w3-bordered'><tr><th onclick='ordena5()'>Hash H</th><th>Hash N</th><th>Price</th><th onclick='ordena()'>ROI H</th><th onclick='ordena2()'>ROI N</th><th onclick='ordena3()'>INDICE H</th><th onclick='ordena4()'>INDICE N</th><th>Pos</th><th>Dias</th></tr>";
+    for (let i = 0; i < len2; i++) {
+        a += "<tr>";
+        a += "<td>"+arr[i][0]+"</td>"
+        a += "<td>"+arr[i][1]+"</td>"
+        a += "<td>"+arr[i][2]+"</td>"
+        a += "<td>"+arr[i][3].toFixed(2)+"</td>"
+        a += "<td>"+arr[i][4].toFixed(2)+"</td>"
+        a += "<td>"+arr[i][7].toFixed(2)+"</td>"
+        a += "<td>"+arr[i][8].toFixed(2)+"</td>"
+        a += "<td>"+arr[i][5]+"</td>"
+        a += "<td>"+arr[i][6]+"</td>";
+        a += "</tr>";
+    }
+    a += "</table>";
+    a += "<br>Total registros: "+len+"<br>";
+    document.getElementById("result").innerHTML = a;
+}
+
+function myFunction() {
+    hp = document.getElementById("hp").value;
+    ht = document.getElementById("ht").value;
+}
+
+
+function ordena() {
+    res.sort(sortFunction);
+    imprime(res);
+}
+
+function ordena2() {
+    res.sort(sortFunction2);
+    imprime(res);
+}
+
+function ordena3() {
+    res.sort(sortFunction3);
+    imprime(res);
+}
+
+function ordena4() {
+    res.sort(sortFunction4);
+    imprime(res);
+}
+
+function ordena5() {
+    res.sort(sortFunction5);
+    imprime(res);
+}
+
+function sortFunction(a, b) {
+    if (a[3] === b[3]) {
+        return 0;
+    }
+    else {
+        return (b[3] < a[3]) ? -1 : 1;
+    }
+}
+
+function sortFunction2(a, b) {
+    if (a[4] === b[4]) {
+        return 0;
+    }
+    else {
+        return (b[4] < a[4]) ? -1 : 1;
+    }
+}
+
+function sortFunction3(a, b) {
+    if (a[7] === b[7]) {
+        return 0;
+    }
+    else {
+        return (b[7] < a[7]) ? -1 : 1;
+    }
+}
+
+function sortFunction4(a, b) {
+    if (a[8] === b[8]) {
+        return 0;
+    }
+    else {
+        return (b[8] < a[8]) ? -1 : 1;
+    }
+}
+
+function sortFunction5(a, b) {
+    if (a[0] === b[0]) {
+        return 0;
+    }
+    else {
+        return (b[0] < a[0]) ? -1 : 1;
+    }
+}
+
+
+
+
+</script>
+</body>
+</html>
