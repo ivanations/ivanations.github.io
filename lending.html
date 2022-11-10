@@ -112,7 +112,7 @@ async function run(){
 }
 
 function imprime(arr){
-    let a = "<table class='w3-table w3-bordered'><tr><th onclick='ordena5()'>Hash H</th><th>Hash N</th><th>Price</th><th onclick='ordena()'>ROI H</th><th onclick='ordena2()'>ROI N</th><th onclick='ordena3()'>INDICE H</th><th onclick='ordena4()'>INDICE N</th><th>Pos</th><th>Dias</th></tr>";
+    let a = "<table class='w3-table w3-bordered'><tr><th onclick='ordena5()'>Hash H</th><th>Hash N</th><th onclick='hide()'>Price</th><th onclick='ordena()'>ROI H</th><th onclick='ordena2()'>ROI N</th><th onclick='ordena3()'>INDICE H</th><th onclick='ordena4()'>INDICE N</th><th>Pos</th><th>Dias</th></tr>";
     for (let i = 0; i < len2; i++) {
         a += "<tr>";
         a += "<td>"+arr[i][0]+"</td>"
@@ -208,6 +208,17 @@ function sortFunction5(a, b) {
 }
 
 
+////////////////////////////////////////////////
+
+function hide() {
+    arr = [];
+    for (let i = 0; i < len2; i++) {
+        if (res[i][0]>= 5000) {
+            arr.push(res[i]);
+        }
+    }
+    imprime(arr);
+}
 
 
 </script>
