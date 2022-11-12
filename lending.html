@@ -15,10 +15,10 @@
         <br>
         <h2>Alquiler de Momos</h2>
         <div class="w3-left-align"><label class="w3-left-align">Hash total mínimo buscado</label></div>
-        <input class="w3-input w3-border w3-round" type="text" id="minh" value="" onchange="myFunction()">
+        <input class="w3-input w3-border w3-round" type="text" id="minh" value="4000" onchange="myFunction()">
         <br>
         <div class="w3-left-align"><label class="w3-left-align">Cantidad de momos</label></div>
-        <input class="w3-input w3-border w3-round" type="text" id="cant" value="" onchange="myFunction()">
+        <input class="w3-input w3-border w3-round" type="text" id="cant" value="3" onchange="myFunction()">
         <br>
         <p>
         <input class="w3-radio" type="radio" name="rareza" value="4" checked>
@@ -31,7 +31,7 @@
         <br>
         <button class="w3-button w3-black w3-round" onclick="run()" id="buscar">Buscar</button>
         <br>
-        <div><p id="auto"></p><p id="autor"></p></div>
+        <div><p id="autor"></p></div>
         <br>
         <div id="result"></div>
         <br>
@@ -76,6 +76,14 @@ function busca(arr,n) {
     return a;
 }
 
+function copiar(arr) {
+    let arrb = [];
+    for (let i = 0; i < arr.length; i++) {
+        arrb.push(arr[i]);
+    }
+    return arrb;
+}
+
 function myFunction() {
     cant = document.getElementById("cant").value;
     minh = document.getElementById("minh").value;
@@ -88,7 +96,7 @@ function ordena(num) {
 }
 
 function imprime(arr){
-    let a = "<table class='w3-table w3-bordered'><tr><th onclick='ordena(0)'>Hash H</th><th onclick='ordena(1)'>Hash N</th><th onclick='ordena(2)'>Price</th><th onclick='ordena(3)'>ROI H</th><th onclick='ordena(4)'>ROI N</th><th onclick='ordena(7)'>INDICE H</th><th onclick='ordena(8)'>INDICE N</th><th>Pos</th><th>Dias</th></tr>";
+    let a = "<table class='w3-table w3-bordered'><tr><th onclick='ordena(0)'>Hash H</th><th onclick='ordena(1)'>Hash N</th><th onclick='ordena(2)'>Price</th><th onclick='ordena(3)'>ROI H</th><th onclick='ordena(4)'>ROI N</th><th onclick='ordena(7)'>INDICE H</th><th onclick='ordena(8)'>INDICE N</th><th onclick='ordena(5)'>Pos</th><th>Dias</th></tr>";
     for (let i = 0; i < arr.length; i++) {
         a += "<tr>";
         a += "<td>"+arr[i][0]+"</td>"
@@ -123,7 +131,7 @@ async function run(){
     minh = document.getElementById("minh").value;
     type = document.querySelector('input[name="rareza"]:checked').value;
 
-    console.log("extraidos momos tipo",type);
+    console.log("buscando momos tipo",type);
     
     fetch("https://nftapi.mobox.io/momo_renter/search/BNB?page=1&limit="+l+"&category=&vType="+type+"&sort=-time&rentDays=")
     .then(response => response.json())
@@ -158,7 +166,7 @@ async function run(){
         element.classList.remove("w3-disabled");
         imprime(res);
         if ((cant!="")&&(minh!="")) {
-            //optimiza();    
+            optimiza();    
         }
     })
     .catch((err) => {
@@ -176,7 +184,8 @@ function optimiza() {
     let len = 0;
     console.log("calculando...");
 
-    ordena(8);
+    ordena(7);
+    console.log("calculando...");
     if (type == 4) {
         len = Math.round(res.length/3);
     }else{
@@ -184,12 +193,11 @@ function optimiza() {
     }
     
     console.log("longitudud",len);
-    document.getElementById("auto").innerHTML = "Buscando: "+len;
 
     let posi;
     //let cant = 4;
 
-    for (let i = 0; i < 10; i++) { //500000000
+    for (let i = 0; i < 50000000; i++) { //500000000
 
         ran = [];
         while (ran.length < cant) {
@@ -198,40 +206,40 @@ function optimiza() {
                 ran.push(pos)
             }
         }
-        console.log(ran);
+        //console.log(ran);
 
         let sum = 0;
         let cash = 0;
         for (let i = 0; i < cant; i++) {
-            sum += res[ran[i]][1];
+            sum += res[ran[i]][0];
             cash += res[ran[i]][2];
         }
-        console.log(sum,cash);
+        //console.log(sum,cash);
 
         if(sum >= minh){
-            if((cash < plata)||((cash==plata)&&(sum > total))){
+            if((cash < plata)||((cash==plata)&&(sum>total))){
                 total = sum;
                 plata = cash;
                 posi = ran;
-                document.getElementById("auto2").innerHTML = total+" "+plata;
+                document.getElementById("autor").innerHTML = total+" "+plata;
                 console.log(total,plata);
             }
         }
     }
 
     if (total != 0) {
-        /*let a = "momos: ";
+        let a = "momos: ";
         for (let i = 0; i < posi.length; i++) {
-            a += "("+res[posi[i]][1]+" "+res[posi[i]][2]+") ";
-            console.log("momo:", res[posi[i]][1], res[posi[i]][2]);
+            a += "("+res[posi[i]][0]+" "+res[posi[i]][2]+" "+res[posi[i]][5]+") ";
+            console.log("momo:", res[posi[i]][0], res[posi[i]][2]);
         }
         a += "<br>Resultado: "+total+" "+plata;
-        document.getElementById("auto2").innerHTML = a;
-        document.getElementById("auto").innerHTML = "";*/
-        console.log("Resultado:",total,plata);
+        document.getElementById("autor").innerHTML = a;
+        //document.getElementById("auto").innerHTML = "";
+        console.log("Resultado de busqueda automática:",total,plata);
     }else{
-        document.getElementById("auto2").innerHTML = "No encontro resultados";
-        document.getElementById("auto").innerHTML = "";
+        document.getElementById("autor").innerHTML = "Busqueda automática no encontro resultados";
+        //document.getElementById("auto").innerHTML = "";
         console.log("No encontro resultados");
     }
     
