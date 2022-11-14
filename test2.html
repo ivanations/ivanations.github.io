@@ -8,11 +8,22 @@
 </head>
 <body>
 
+<p>
 <form name="submit-form">
     <input name="nombre" type="text" placeholder="Nombre" required>
     <input name="apellido" type="text" placeholder="Apellido" required>
     <button type="submit">Enviar</button>
 </form>
+</p>
+
+<p>
+<p>Editar</p>
+<form name="edit-form">
+  <input name="name" type="text" placeholder="name" required>
+  <input name="last" type="text" placeholder="last" required>
+  <button type="submit">Enviar</button>
+</form>
+</p>
 
 <script>
 
@@ -32,6 +43,27 @@ form.addEventListener('submit', e => {
 
 // aplicacion web
 //https://script.google.com/macros/s/AKfycbz_U5u6Zdyi4QvwwhNqcavM-3ctJ2z_A9ZUdMrcMyI81On3yB6ns2L1WjOhHeyDk0LN/exec
+
+
+
+
+// modificar form
+const scriptURL2 = 'https://script.google.com/macros/s/AKfycbyughP_8n5DEnlpEHD6_mJ65AmhS3UbG_MxDdZT8zpw38TEj1nJzyhVmNPO-zCfcak/exec'
+const form2 = document.forms['edit-form']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL2, { method: 'POST', body: new FormData(form2)})
+    .then(response => console.log('Success!', response))
+    .catch(error => console.error('Error!', error.message))
+})
+
+//ID implementacion
+//AKfycbyughP_8n5DEnlpEHD6_mJ65AmhS3UbG_MxDdZT8zpw38TEj1nJzyhVmNPO-zCfcak
+
+// aplicacion web
+//https://script.google.com/macros/s/AKfycbyughP_8n5DEnlpEHD6_mJ65AmhS3UbG_MxDdZT8zpw38TEj1nJzyhVmNPO-zCfcak/exec
+
 
     
     
