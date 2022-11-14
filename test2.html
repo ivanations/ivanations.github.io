@@ -55,7 +55,8 @@ const form2 = document.forms['edit-form'];
 form2.addEventListener('submit', e => {
   e.preventDefault()
   fetch(scriptURL2, { method: 'POST', body: new FormData(form2)})
-    .then(response => console.log('Success!', response.json()))
+    .then(response => response.json())
+    .then(json => console.log('Success!', json))
     .catch(error => console.error('Error!', error.message))
 })
 
