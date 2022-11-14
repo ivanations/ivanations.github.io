@@ -34,7 +34,7 @@ const form = document.forms['submit-form'];
 form.addEventListener('submit', e => {
   e.preventDefault()
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => console.log('Success!', response))
+    .then(response => console.log('Success!', response.json()))
     .catch(error => console.error('Error!', error.message))
 })
 
@@ -54,7 +54,7 @@ const form2 = document.forms['edit-form'];
 form2.addEventListener('submit', e => {
   e.preventDefault()
   fetch(scriptURL2, { method: 'POST', body: new FormData(form2)})
-    .then(response => console.log('Success!', response))
+    .then(response => console.log('Success!', response.json()))
     .catch(error => console.error('Error!', error.message))
 })
 
