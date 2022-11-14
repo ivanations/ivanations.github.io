@@ -29,7 +29,7 @@
 
 // enviar fomr
 const scriptURL = 'https://script.google.com/macros/s/AKfycbz_U5u6Zdyi4QvwwhNqcavM-3ctJ2z_A9ZUdMrcMyI81On3yB6ns2L1WjOhHeyDk0LN/exec'
-const form = document.forms['submit-form']
+const form = document.forms['submit-form'];
 
 form.addEventListener('submit', e => {
   e.preventDefault()
@@ -49,9 +49,9 @@ form.addEventListener('submit', e => {
 
 // modificar form
 const scriptURL2 = 'https://script.google.com/macros/s/AKfycbyughP_8n5DEnlpEHD6_mJ65AmhS3UbG_MxDdZT8zpw38TEj1nJzyhVmNPO-zCfcak/exec'
-const form2 = document.forms['edit-form']
+const form2 = document.forms['edit-form'];
 
-form.addEventListener('submit', e => {
+form2.addEventListener('submit', e => {
   e.preventDefault()
   fetch(scriptURL2, { method: 'POST', body: new FormData(form2)})
     .then(response => console.log('Success!', response))
