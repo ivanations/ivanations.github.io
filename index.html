@@ -41,85 +41,21 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     </div>
 </div>
 
-<div id="home">
-    <!-- Header small -->
-    <header class="w3-container w3-center w3-hide-large bsimg" style="padding: 60px 0px;">
-        <h1 class="w3-hide-medium"><b>Turbo Academy</b></h1>
-        <h1 class="w3-jumbo w3-hide-small"><b>Turbo Academy</b></h1>
-        <p>
-            <h2 class="w3-hide-medium">Comienza a estudiar <br>Inglés</h2>
-            <h2 class="w3-xxxlarge w3-hide-small">Comienza a estudiar <br>Inglés</h2>
-        </p>
-        <p>Despega en tu carrera o trabajo. Estudia a remoto y de manera intensiva.<br>¿Y lo mejor? Solo cuesta <h2>USD $ 10</h2></p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd07crRq8LFDYI1t3Gz8h6a00VpsDZ52N7zKyBr1GjqwkfidA/viewform?usp=sf_link" target="_blank" class="w3-button w3-amber w3-padding-large w3-round-large w3-margin-top" style="min-width: 250px;">
+<div style="min-height: 400px;"></div>
+
+<!-- Listo -->
+<div class="w3-padding-large w3-amber">
+    <div class="w3-padding-32 w3-content w3-center" style="margin-bottom:32px">
+        <br><br>
+        <h1 class="w3-hide-small">¿Quieres cambiar tu vida?</h1>
+        <h1 class="w3-hide-medium w3-hide-large w3-xlarge">¿Quieres cambiar tu vida?</h1>
+        <br>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd07crRq8LFDYI1t3Gz8h6a00VpsDZ52N7zKyBr1GjqwkfidA/viewform?usp=sf_link" target="_blank" class="w3-button w3-black w3-padding-large w3-round-large w3-margin-top w3-hover-dark-grey" style="min-width: 250px;">
             <b class="w3-large">Aplica</b>
         </a>
-    </header>
-</div>
-
-<!-- About Section -->
-<div class="w3-padding-large w3-white" id="info">
-    <div class="w3-padding-32 w3-content w3-center">
-        <h2>Una oportunidad que cambia tu vida</h2>
-        <hr class="w3-opacity">
-        <div class="w3-row">
-            <div class="w3-col l6 m6 w3-padding">
-                <p><i class="fa fa-money w3-xxlarge" aria-hidden="true"></i></p>
-                Esudia ingles al mejor precio, por solo 10$ USD mensuales, accede a nuestro curso completo con clases en vivo y totalmente online.
-            </div>
-            <div class="w3-col l6 m6 w3-padding">
-                <p><i class="fa fa-graduation-cap w3-xxlarge" aria-hidden="true"></i></p>
-                Tenemos horarios en la mañana, tarde y noche, elige el de tu preferencia, solo nesecitas un dispositivo con conección a internet.
-            </div>
-        </div>
-        <br>
+        <br><br>
     </div>
 </div>
-
-<!-- footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-xlarge" style="margin:-24px">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>&nbsp;
-    <i class="fa fa-instagram w3-hover-opacity"></i>&nbsp;
-    <i class="fa fa-twitter w3-hover-opacity"></i>&nbsp;
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">Turbo Academy 2022</p>
-</footer>
-
-<script>
-
-function openNav() {
-    document.getElementById("mySidebar").style.width = "60%";
-    document.getElementById("mySidebar").style.display = "block";
-}
-
-function closeNav() {
-    document.getElementById("mySidebar").style.display = "none";
-}
-
-function acordion(id) {
-    var x = document.getElementById(id);
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-        x.previousElementSibling.className = 
-        x.previousElementSibling.className.replace("w3-black", "w3-dark-grey");
-    } else { 
-        x.className = x.className.replace(" w3-show", "");
-        x.previousElementSibling.className = 
-        x.previousElementSibling.className.replace("w3-dark-grey", "w3-black");
-    }
-}
-
-
-document.forms['msg-form'].addEventListener('submit', e => {
-  e.preventDefault()
-  document.getElementById('id01').style.display='block'
-  /*fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => response.json())
-    .then(json => console.log('Success!', json))
-    .catch(error => console.error('Error!', error.message))*/
-})
-
-</script>
 
 </body>
 </html>
