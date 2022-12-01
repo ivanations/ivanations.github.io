@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Turbo Academy</title>
+<html lang="en"><head>
+<title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="stylesheet" href="css/w3.css"> -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- <link rel="stylesheet" href="css/w3.css"> -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
 .bgimg {
-    background-position: center;
+    position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url('img/image.webp');
@@ -24,68 +21,285 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     background-size: cover;
     background-image: url('img/image_small.jpg');
 }
+@media (min-width:993px){
+    #pagina{margin-left:40%;}
+}
 </style>
 </head>
-<body class="w3-black">
+<body>
 
-<!-- Top Menu -->
+<!-- Navbar -->
 <div class="w3-top">
-    <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-        <a href="#home" class="w3-bar-item w3-button w3-hover-amber w3-round-large">Logo</a>
-        <!-- Right-sided navbar links. Hide them on small screens -->
-        <div class="w3-right">
-            <a href="#info" class="w3-bar-item w3-button w3-hover-amber w3-round-large">Info</a>
-            <a href="#costo" class="w3-bar-item w3-button w3-hover-amber w3-round-large">Costo</a>
-            <a href="#msg" class="w3-bar-item w3-button w3-hover-amber w3-round-large">Msg</a>
+    <div class="w3-bar w3-white w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="#faq" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PREGUNTAS</a>
+        <a href="#costo" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PRECIOS</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACTO</a>
+    </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+    <a href="#faq" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PREGUNTAS</a>
+    <a href="#costo" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PRECIOS</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACTO</a>
+</div>
+
+
+<!-- Sidebar with image -->
+<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%;">
+    <div class="bgimg"></div>
+</nav>
+
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px" id="pagina">
+
+
+    <!-- Header small -->
+    <div class="w3-black w3-hide-large">
+        <div class="w3-container w3-content w3-padding-64 w3-center bsimg" style="max-width:1000px">
+            <h1><b>Turbo Academy</b></h1>
+            <p><h2>Comienza a estudiar <br>Inglés</h2></p>
+            <p>Despega en tu carrera o trabajo. Estudia a remoto y de manera intensiva.<br>¿Y lo mejor? Solo cuesta <h2>USD $ 10</h2></p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd07crRq8LFDYI1t3Gz8h6a00VpsDZ52N7zKyBr1GjqwkfidA/viewform?usp=sf_link" target="_blank" class="w3-button w3-amber w3-padding-large w3-round-large w3-margin-top" style="min-width: 250px;">
+                <b class="w3-large">Aplica</b>
+            </a>
+        </div>
+    </div>
+
+    <!-- Header Large -->
+    <div class="w3-black w3-hide-medium w3-hide-small">
+        <div class="w3-container w3-content w3-padding-64 w3-center" style="max-width:1000px">
+            <h1 class="w3-jumbo"><b>Turbo Academy</b></h1>
+            <p><h2 class="w3-xxxlarge">Comienza a estudiar <br>Inglés</h2></p>
+            <p>Despega en tu carrera o trabajo. Estudia a remoto y de manera intensiva.<br>¿Y lo mejor? Solo cuesta <h2>USD $ 10</h2></p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd07crRq8LFDYI1t3Gz8h6a00VpsDZ52N7zKyBr1GjqwkfidA/viewform?usp=sf_link" target="_blank" class="w3-button w3-amber w3-padding-large w3-round-large w3-margin-top" style="min-width: 250px;">
+                <b class="w3-large">Aplica</b>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- About Section -->
+    <div class="w3-white" id="info">
+        <div class="w3-container w3-content w3-padding-64 w3-center" style="max-width:800px">
+            <h2>Una oportunidad que cambia tu vida</h2>
+            <hr class="w3-opacity">
+            <div class="w3-row">
+                <div class="w3-col l6 m6 w3-padding">
+                    <p><i class="fa fa-money w3-xxlarge" aria-hidden="true"></i></p>
+                    Estudia inglés al mejor precio, por solo 10$ USD mensuales, accede a nuestro curso completo con clases en vivo y totalmente online.
+                </div>
+                <div class="w3-col l6 m6 w3-padding">
+                    <p><i class="fa fa-graduation-cap w3-xxlarge" aria-hidden="true"></i></p>
+                    Tenemos horarios en la mañana, tarde y noche, elige el de tu preferencia, solo necesitas un dispositivo con conexión a internet.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FAQ Section -->
+    <div class="w3-black" id="faq">
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+            <h2>Preguntas</h2>
+            <hr class="w3-opacity">
+            <br>
+            <button onclick="acordion('Demo1')" class="w3-padding-16 w3-button w3-block w3-left-align w3-black w3-border-bottom w3-hover-dark-grey">
+                <span>¿Quiénes somos?</span>&nbsp;<i class="fa fa-caret-down w3-right"></i>
+            </button>
+            <div id="Demo1" class="w3-hide w3-container">
+                <p>Somos la academia de inglés online más económica en Latinoamérica. Estudiar en <strong>Turbo Academy</strong> te ayudará a dominar de una vez por todas el inglés. Puedes convertirte en un mejor profesional o complementar tus estudios con un bajo costo inicial. En <strong>Turbo Academy</strong> nacimos con una misión muy clara: 
+                    queremos que las personas tengan acceso a una educación de calidad, para así optar a empleos bien remunerados.</p>
+            </div>
+
+            <button onclick="acordion('Demo2')" class="w3-padding-16 w3-button w3-block w3-left-align w3-black w3-border-bottom w3-hover-dark-grey">
+                <span>¿Metodología?</span>&nbsp;<i class="fa fa-caret-down w3-right"></i>
+            </button>
+            <div id="Demo2" class="w3-hide w3-container">
+                <p>Nuestra metodología consiste en clases de 1 hora, 3 o 5 veces a la semana, con esto, los estudiantes podrán alcanzar un nivel intermedio en aproximadamente 7 meses de estudio. Nuestras clases consisten en gramática, speaking, listening, writing y dinámicas divertidas en grupos, para hacer que aprender inglés sea más divertido y menos solitario.</p>
+            </div>
+
+            <button onclick="acordion('Demo3')" class="w3-padding-16 w3-button w3-block w3-left-align w3-black w3-border-bottom w3-hover-dark-grey">
+                <span>¿Puedo Inscribir a un niño?</span>&nbsp;<i class="fa fa-caret-down w3-right"></i>
+            </button>
+            <div id="Demo3" class="w3-hide w3-container">
+                <p>Por supuesto que sí, en Turbo Academy tenemos alta experiencia con niños, contamos con un programa English KIDS donde los niños se divierten al mismo tiempo que van aprendiendo. Tiene el mismo costo de 10$ USD mensual.</p>
+            </div>
+
+            <button onclick="acordion('Demo4')" class="w3-padding-16 w3-button w3-block w3-left-align w3-black w3-border-bottom w3-hover-dark-grey">
+                <span>¿Que nivel de inglés soy?</span>&nbsp;<i class="fa fa-caret-down w3-right"></i>
+            </button>
+            <div id="Demo4" class="w3-hide w3-container">
+                <p>Puedes comenzar totalmente desde cero o presentar nuestro examen de nivelación para saber que nivel tienes y donde empezar. Actualmente contamos con los niveles: Kids, Beginer, A1, A2 y B1</p>
+            </div>
+
+            <button onclick="acordion('Demo5')" class="w3-padding-16 w3-button w3-block w3-left-align w3-black w3-border-bottom w3-hover-dark-grey">
+                <span>¿Cómo aplicar?</span>&nbsp;<i class="fa fa-caret-down w3-right"></i>
+            </button>
+            <div id="Demo5" class="w3-hide w3-container">
+                <p>Comienza dando al botón aplicar, luego escoge el horario en el que desees estudiar. Cada clase debe tener un mínimo de 6 estudiantes y un máximo de 12 estudiantes. Los grupos de clases comienzan cada dos semanas. Es decir, el 1 o el 15 de cada mes.</p>
+            </div>
+
+            <button onclick="acordion('Demo6')" class="w3-padding-16 w3-button w3-block w3-left-align w3-black w3-border-bottom w3-hover-dark-grey">
+                <span>¿Métodos de Pago?</span>&nbsp;<i class="fa fa-caret-down w3-right"></i>
+            </button>
+            <div id="Demo6" class="w3-hide w3-container">
+                <p>Aceptamos, transferencia bancaria a nuestras cuentas según el país donde te encuentres, Binance, Zinli, Zelle. El pago es mensual, a mitad de mes, por lo tanto, se comienzan los grupos de clases comienzan cada dos semanas. Es decir, el 1 o el 15 de cada mes.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Pricing Section -->
+    <div class="w3-white" id="costo">
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+            <h2>Precios</h2>
+            <hr class="w3-opacity">
+            <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-col s6 w3-margin-bottom">
+                    <ul class="w3-ul w3-center w3-card w3-hover-shadow">
+                        <li class="w3-dark-grey w3-xlarge w3-padding-32">Básico</li>
+                        <li class="w3-padding-16">3 clases semanales</li>
+                        <li class="w3-padding-16">Clases en vivo</li>
+                        <li class="w3-padding-16">Días de semana</li>
+                        <li class="w3-padding-16">Fines de semana</li>
+                        <li class="w3-padding-16"><h2>USD $ <br class="w3-hide-medium w3-hide-large">10</h2><span class="w3-opacity">mensual</span></li>
+                        <li class="w3-light-grey w3-padding-24"><a href="https://docs.google.com/forms/d/e/1FAIpQLSd07crRq8LFDYI1t3Gz8h6a00VpsDZ52N7zKyBr1GjqwkfidA/viewform?usp=sf_link" target="_blank" class="w3-button w3-amber w3-padding-large w3-hover-black w3-round-large">Aplica</a></li>
+                    </ul>
+                </div>
+                <div class="w3-col s6">
+                    <ul class="w3-ul w3-center w3-card w3-hover-shadow">
+                        <li class="w3-black w3-xlarge w3-padding-32">Pro</li>
+                        <li class="w3-padding-16">5 clases semanales</li>
+                        <li class="w3-padding-16">Clases en vivo</li>
+                        <li class="w3-padding-16">Días de semana</li>
+                        <li class="w3-padding-16">Fines de semana</li>
+                        <li class="w3-padding-16"><h2>USD $ <br class="w3-hide-medium w3-hide-large">20</h2><span class="w3-opacity">mensual</span></li>
+                        <li class="w3-light-grey w3-padding-24"><a href="https://docs.google.com/forms/d/e/1FAIpQLSd07crRq8LFDYI1t3Gz8h6a00VpsDZ52N7zKyBr1GjqwkfidA/viewform?usp=sf_link" target="_blank" class="w3-button w3-amber w3-padding-large w3-hover-black w3-round-large">Aplica</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Listo -->
+    <div class="w3-amber">
+        <div class="w3-container w3-content w3-padding-64 w3-center" style="max-width:800px">
+            <br><br>
+            <h1 class="w3-hide-small">¿Quieres cambiar tu vida?</h1>
+            <h1 class="w3-hide-medium w3-hide-large w3-xlarge">¿Quieres cambiar tu vida?</h1>
+            <br>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd07crRq8LFDYI1t3Gz8h6a00VpsDZ52N7zKyBr1GjqwkfidA/viewform?usp=sf_link" target="_blank" class="w3-button w3-black w3-padding-large w3-round-large w3-margin-top w3-hover-dark-grey" style="min-width: 250px;">
+                <b class="w3-large">Aplica</b>
+            </a>
+            <br><br>
+        </div>
+    </div>
+
+
+    <!-- The Contact Section -->
+    <div class="w3-black">
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+            <h2>Contactanos</h2>
+            <hr class="w3-opacity">
+            <p class="w3-center">Aclara todas tus dudas. Envíanos un mensaje</p>
+            <div class="w3-row w3-padding-32">
+                <div class="w3-col m6 w3-large w3-margin-bottom">
+                    <p><i class="fa fa-map-marker w3-xlarge" style="width:30px"></i> Caracas, VEN</p>
+                    <p><a href="https://wa.me/+584125227013?text=Estoy%20interesado%20en%20el%20curso%20de%20ingles" target="_blank"><i class="fa fa-phone w3-xlarge" style="width:30px"></i> Whatsapp: +58 4125227013</a></p>
+                    <p><i class="fa fa-envelope w3-xlarge" style="width:30px"></i> turbo-academy@gmail.com</p>
+                </div>
+                <div class="w3-col m6">
+                    <form name="msg-form">
+                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required="" name="Email" id="Email"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required="" name="Message" id="Message"></p>
+                        <button class="w3-button w3-amber w3-padding-large w3-round-large w3-section w3-right" type="submit">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>&nbsp;
+        <i class="fa fa-instagram w3-hover-opacity"></i>&nbsp;
+        <i class="fa fa-twitter w3-hover-opacity"></i>&nbsp;
+        <i class="fa fa-linkedin w3-hover-opacity"></i>&nbsp;
+        <p class="w3-medium">Turbo Academy @ 2022</p>
+    </footer>
+
+    
+<!-- End Page Content -->
+</div>
+
+
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+        <header class="w3-container w3-amber">
+            <span onclick="document.getElementById('id01').style.display='none'"
+            class="w3-button w3-display-topright w3-xlarge">&times;</span>
+            <h2>¡Mensaje enviado!</h2>
+        </header>
+        <div class="w3-container w3-white">
+            <p>Responderemos tus dudas a travez de tu Email o Whatsapp ingresado.</p>
+            <p>¡Gracias por tu interes, estás a punto de aprender inglés y lograr grandes cosas.</p>
         </div>
     </div>
 </div>
 
-<div style="min-height: 400px;"></div>
+<script>
 
-<!-- Listo -->
-<div class="w3-padding-large w3-amber">
-    <div class="w3-padding-32 w3-content w3-center" style="margin-bottom:32px">
-        <br><br>
-        <h1 class="w3-hide-small">¿Quieres cambiar tu vida?</h1>
-        <h1 class="w3-hide-medium w3-hide-large w3-xlarge">¿Quieres cambiar tu vida?</h1>
-        <br>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd07crRq8LFDYI1t3Gz8h6a00VpsDZ52N7zKyBr1GjqwkfidA/viewform?usp=sf_link" target="_blank" class="w3-button w3-black w3-padding-large w3-round-large w3-margin-top w3-hover-dark-grey" style="min-width: 250px;">
-            <b class="w3-large">Aplica</b>
-        </a>
-        <br><br>
-    </div>
-</div>
+function acordion(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace("w3-black", "w3-dark-grey");
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace("w3-dark-grey", "w3-black");
+    }
+}
 
-<!-- Contact Section -->
-<div class="w3-padding-large" id="msg">
-    <div class="w3-padding-32 w3-content" style="margin-bottom:64px">
-        <h2>Contactanos</h2>
-        <hr class="w3-opacity">
+document.forms['msg-form'].addEventListener('submit', e => {
+  e.preventDefault()
+  document.getElementById('id01').style.display='block'
+  document.getElementById("Email").value="";
+  document.getElementById("Message").value="";
+  /*fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => response.json())
+    .then(json => console.log('Success!', json))
+    .catch(error => console.error('Error!', error.message))*/
+})
 
-        <div class="w3-section">
-            <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Caracas, VEN</p>
-            <p><a href="https://wa.me/+584125227013?text=Estoy%20interesado%20en%20el%20curso%20de%20ingles" target="_blank"><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Whatsapp: +58 4125227013</a></p>
-            <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> turbo-academy@gmail.com</p>
-        </div>
-        <br><br>
-        <p>Aclara todas tus dudas. Envianos un mensaje:</p>
-        <form name="msg-form">
-            <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email o Whatsapp" required name="Email"></p>
-            <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Mensaje" required name="Message"></p>
-            <p><button class="w3-button w3-amber w3-padding-large w3-round-large" type="submit"><i class="fa fa-paper-plane"></i> Enviar Mensaje</button></p>
-        </form>
-    </div>
-</div>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    } else { 
+    x.className = x.className.replace(" w3-show", "");
+    }
+}
 
-<!-- footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-xlarge" style="margin:-24px">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>&nbsp;
-    <i class="fa fa-instagram w3-hover-opacity"></i>&nbsp;
-    <i class="fa fa-twitter w3-hover-opacity"></i>&nbsp;
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">Turbo Academy 2022</p>
-</footer>
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+    if (event.target == modal) {
+    modal.style.display = "none";
+    }
+}
+</script>
+
 
 </body>
 </html>
