@@ -226,7 +226,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
                 </div>
                 <div class="w3-col m6">
                     <form name="msg-form">
-                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required="" name="Email" id="Email"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email o Whatsapp" required="" name="Email" id="Email"></p>
                         <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required="" name="Message" id="Message"></p>
                         <button class="w3-button w3-amber w3-padding-large w3-round-large w3-section w3-right" type="submit">Enviar Mensaje</button>
                     </form>
@@ -238,9 +238,10 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
-        <a href="https://www.facebook.com/inglesclass.academy" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>&nbsp;
-        <a href="https://www.instagram.com/inglesclass_academy/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>&nbsp;
-        <a href="https://twitter.com/class_ingles" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>&nbsp;
+        &nbsp;&nbsp;
+        <a href="https://www.facebook.com/inglesclass.academy" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>&nbsp;&nbsp;
+        <a href="https://www.instagram.com/inglesclass_academy/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>&nbsp;&nbsp;
+        <a href="https://twitter.com/class_ingles" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>&nbsp;&nbsp;
         <p class="w3-medium">InglesClass @ 2022</p>
     </footer>
 
@@ -279,15 +280,18 @@ function acordion(id) {
     }
 }
 
-document.forms['msg-form'].addEventListener('submit', e => {
-  e.preventDefault()
-  document.getElementById('id01').style.display='block'
-  document.getElementById("Email").value="";
-  document.getElementById("Message").value="";
-  /*fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+// enviar mensaje
+const scriptURL = 'https://script.google.com/macros/s/AKfycbycnrwd0sQKEPPInciMmZBQU49NTNeYduLQCaUG_p-Uqw6ralJrJlwkcqlrX2TZr1Br/exec'
+const form = document.forms['msg-form']
+form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
     .then(response => response.json())
     .then(json => console.log('Success!', json))
-    .catch(error => console.error('Error!', error.message))*/
+    .catch(error => console.error('Error!', error.message))
+    document.getElementById('id01').style.display='block'
+    document.getElementById("Email").value="";
+    document.getElementById("Message").value="";
 })
 
 // Used to toggle the menu on small screens when clicking on the menu button
