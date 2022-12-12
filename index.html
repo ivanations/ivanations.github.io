@@ -1,322 +1,85 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XDWWY1L5GL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XDWWY1L5GL');
-</script>
-
-<title>InglesClass | Tu curso de inglés más económico</title>
-<meta name="description" content="Domina el inglés de una vez por todas, nosotros te ayudamos a lograrlo, clases en vivo y horarios flexibles por solo 10$ mensuales">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<!-- <link rel="stylesheet" href="css/w3.css"> -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="shortcut icon" href="img/ic-logo.ico" />
-<style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.bgimg {
-    position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('img/image.webp');
-    min-height: 100%;
-}
-.bsimg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('img/image_small.jpg');
-}
-@media (min-width:993px){
-    #pagina{margin-left:40%;}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Bridge</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<body>
+<body class="w3-light-gray">
 
-<!-- Navbar -->
-<div class="w3-top">
-    <div class="w3-bar w3-white w3-card">
-        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-        <a href="#" class="w3-bar-item w3-button"><img src="img/ic-logo.png" alt="Home Ingles Class" width="30" height="30"></a>
-        <a href="#faq" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PREGUNTAS</a>
-        <a href="#costo" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PRECIOS</a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACTO</a>
-    </div>
+<div class="w3-container w3-content w3-white w3-round-xlarge w3-border w3-center" style="max-width: 500px; margin-top: 30px; padding: 50px; padding-bottom: 50px;">
+    <div style="margin-bottom: 50px;"><img src="https://static.wixstatic.com/media/41022f_b3ed4262b4b941eaad3ef84d60fa54e8~mv2.png/v1/fill/w_366,h_332,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/institute%203.png" style="max-width: 150px;"></div>
+    <h2>¡Bienvenido!</h2>
+    <h3 class="w3-text-grey w3-large">Ingresa tus datos para acceder</h3>
+    <form class="w3-container w3-left-align" name="submit-form">
+        <p>
+        <input class="w3-input" type="text" name="nombre" id="nombre">
+        <label>Nombre</label>
+        </p>
+        <p>
+        <input class="w3-input" type="text" name="apellido" id="apellido">
+        <label>Apellido</label>
+        </p>
+        <p>
+        <input class="w3-input" type="text" name="num" id="num">
+        <label>Posición</label>
+        </p>
+        <br>
+        <p class="w3-center"><button class="w3-btn w3-blue w3-round" id="guardar">Guardar</button>&nbsp;&nbsp;<button class="w3-btn w3-blue w3-round" id="obtener">Obtener</button></p>
+    </form>
 </div>
-
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-    <a href="#faq" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PREGUNTAS</a>
-    <a href="#costo" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PRECIOS</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACTO</a>
-</div>
-
-
-<!-- Sidebar with image -->
-<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%;">
-    <div class="bgimg"></div>
-</nav>
-
-
-<!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px" id="pagina">
-
-
-    <!-- Header small -->
-    <div class="w3-black w3-hide-large">
-        <div class="w3-container w3-content w3-padding-64 w3-center bsimg" style="max-width:1000px">
-            <h1><b><span class="w3-amber w3-padding">Ingles</span><span class="w3-white w3-padding">Class</span></b></h1>
-            <p><h2>Comienza a estudiar <br>Inglés</h2></p>
-            <p>Despega en tu carrera o trabajo. Estudia a remoto y de manera intensiva.<br>¿Y lo mejor? Solo cuesta <h2>USD $ 10</h2></p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd07crRq8LFDYI1t3Gz8h6a00VpsDZ52N7zKyBr1GjqwkfidA/viewform?usp=sf_link" target="_blank" class="w3-button w3-amber w3-padding-large w3-round-large w3-margin-top" style="min-width: 250px;">
-                <b class="w3-large">Aplica</b>
-            </a>
-        </div>
-    </div>
-
-    <!-- Header Large -->
-    <div class="w3-black w3-hide-medium w3-hide-small">
-        <div class="w3-container w3-content w3-padding-64 w3-center" style="max-width:1000px">
-            <h1 class="w3-jumbo"><b><span class="w3-amber w3-padding">Ingles</span><span class="w3-white w3-padding">Class</span></b></h1>
-            <p><h2 class="w3-xxxlarge">Comienza a estudiar <br>Inglés</h2></p>
-            <p>Despega en tu carrera o trabajo. Estudia a remoto y de manera intensiva.<br>¿Y lo mejor? Solo cuesta <h2>USD $ 10</h2></p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd07crRq8LFDYI1t3Gz8h6a00VpsDZ52N7zKyBr1GjqwkfidA/viewform?usp=sf_link" target="_blank" class="w3-button w3-amber w3-padding-large w3-round-large w3-margin-top" style="min-width: 250px;">
-                <b class="w3-large">Aplica</b>
-            </a>
-        </div>
-    </div>
-
-
-    <!-- About Section -->
-    <div class="w3-white" id="info">
-        <div class="w3-container w3-content w3-padding-64 w3-center" style="max-width:800px">
-            <h2>Una oportunidad que cambia tu vida</h2>
-            <hr class="w3-opacity">
-            <div class="w3-row">
-                <div class="w3-col l6 m6 w3-padding">
-                    <p><i class="fa fa-money w3-xxlarge" aria-hidden="true"></i></p>
-                    Estudia inglés al mejor precio, por solo 10$ USD mensuales, accede a nuestro curso completo con clases en vivo y totalmente online.
-                </div>
-                <div class="w3-col l6 m6 w3-padding">
-                    <p><i class="fa fa-graduation-cap w3-xxlarge" aria-hidden="true"></i></p>
-                    Tenemos horarios en la mañana, tarde y noche, elige el de tu preferencia, solo necesitas un dispositivo con conexión a internet.
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- FAQ Section -->
-    <div class="w3-black" id="faq">
-        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-            <h2>Preguntas</h2>
-            <hr class="w3-opacity">
-            <br>
-            <button onclick="acordion('Demo1')" class="w3-padding-16 w3-button w3-block w3-left-align w3-black w3-border-bottom w3-hover-dark-grey">
-                <span>¿Quiénes somos?</span>&nbsp;<i class="fa fa-caret-down w3-right"></i>
-            </button>
-            <div id="Demo1" class="w3-hide w3-container">
-                <p>Somos la academia de inglés online más económica en Latinoamérica. Estudiar en <strong>InglesClass</strong> te ayudará a dominar de una vez por todas el inglés. Puedes convertirte en un mejor profesional o complementar tus estudios con un bajo costo inicial. En <strong>InglesClass</strong> nacimos con una misión muy clara: 
-                    queremos que las personas tengan acceso a una educación de calidad, para así optar a empleos bien remunerados.</p>
-            </div>
-
-            <button onclick="acordion('Demo2')" class="w3-padding-16 w3-button w3-block w3-left-align w3-black w3-border-bottom w3-hover-dark-grey">
-                <span>¿Metodología?</span>&nbsp;<i class="fa fa-caret-down w3-right"></i>
-            </button>
-            <div id="Demo2" class="w3-hide w3-container">
-                <p>Nuestra metodología consiste en clases de 1 hora, 3 o 5 veces a la semana, con esto, los estudiantes podrán alcanzar un nivel intermedio en aproximadamente 7 meses de estudio. Nuestras clases consisten en gramática, speaking, listening, writing y dinámicas divertidas en grupos, para hacer que aprender inglés sea más divertido y menos solitario.</p>
-            </div>
-
-            <button onclick="acordion('Demo3')" class="w3-padding-16 w3-button w3-block w3-left-align w3-black w3-border-bottom w3-hover-dark-grey">
-                <span>¿Puedo Inscribir a un niño?</span>&nbsp;<i class="fa fa-caret-down w3-right"></i>
-            </button>
-            <div id="Demo3" class="w3-hide w3-container">
-                <p>Por supuesto que sí, en InglesClass tenemos alta experiencia con niños, contamos con un programa English KIDS donde los niños se divierten al mismo tiempo que van aprendiendo. Tiene el mismo costo de 10$ USD mensual.</p>
-            </div>
-
-            <button onclick="acordion('Demo4')" class="w3-padding-16 w3-button w3-block w3-left-align w3-black w3-border-bottom w3-hover-dark-grey">
-                <span>¿Que nivel de inglés soy?</span>&nbsp;<i class="fa fa-caret-down w3-right"></i>
-            </button>
-            <div id="Demo4" class="w3-hide w3-container">
-                <p>Puedes comenzar totalmente desde cero o presentar nuestro examen de nivelación para saber que nivel tienes y donde empezar. Actualmente contamos con los niveles: Kids, Beginer, A1, A2 y B1</p>
-            </div>
-
-            <button onclick="acordion('Demo5')" class="w3-padding-16 w3-button w3-block w3-left-align w3-black w3-border-bottom w3-hover-dark-grey">
-                <span>¿Cómo aplicar?</span>&nbsp;<i class="fa fa-caret-down w3-right"></i>
-            </button>
-            <div id="Demo5" class="w3-hide w3-container">
-                <p>Comienza dando al botón aplicar, luego escoge el horario en el que desees estudiar. Cada clase debe tener un mínimo de 6 estudiantes y un máximo de 12 estudiantes. Los grupos de clases comienzan cada dos semanas. Es decir, el 1 o el 15 de cada mes.</p>
-            </div>
-
-            <button onclick="acordion('Demo6')" class="w3-padding-16 w3-button w3-block w3-left-align w3-black w3-border-bottom w3-hover-dark-grey">
-                <span>¿Métodos de Pago?</span>&nbsp;<i class="fa fa-caret-down w3-right"></i>
-            </button>
-            <div id="Demo6" class="w3-hide w3-container">
-                <p>Aceptamos, transferencia bancaria a nuestras cuentas según el país donde te encuentres, Binance, Zinli, Zelle. El pago es mensual, a mitad de mes, por lo tanto, se comienzan los grupos de clases comienzan cada dos semanas. Es decir, el 1 o el 15 de cada mes.</p>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Pricing Section -->
-    <div class="w3-white" id="costo">
-        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-            <h2>Precios</h2>
-            <hr class="w3-opacity">
-            <div class="w3-row-padding" style="margin:0 -16px">
-                <div class="w3-col s6 w3-margin-bottom">
-                    <ul class="w3-ul w3-center w3-card w3-hover-shadow">
-                        <li class="w3-dark-grey w3-xlarge w3-padding-32">Básico</li>
-                        <li class="w3-padding-16">3 clases semanales</li>
-                        <li class="w3-padding-16">Clases en vivo</li>
-                        <li class="w3-padding-16">Días de semana</li>
-                        <li class="w3-padding-16">Fines de semana</li>
-                        <li class="w3-padding-16"><h2>USD $ <br class="w3-hide-medium w3-hide-large">10</h2><span class="w3-opacity">mensual</span></li>
-                        <li class="w3-light-grey w3-padding-24"><a href="https://docs.google.com/forms/d/e/1FAIpQLSd07crRq8LFDYI1t3Gz8h6a00VpsDZ52N7zKyBr1GjqwkfidA/viewform?usp=sf_link" target="_blank" class="w3-button w3-amber w3-padding-large w3-hover-black w3-round-large">Aplica</a></li>
-                    </ul>
-                </div>
-                <div class="w3-col s6">
-                    <ul class="w3-ul w3-center w3-card w3-hover-shadow">
-                        <li class="w3-black w3-xlarge w3-padding-32">Pro</li>
-                        <li class="w3-padding-16">5 clases semanales</li>
-                        <li class="w3-padding-16">Clases en vivo</li>
-                        <li class="w3-padding-16">Días de semana</li>
-                        <li class="w3-padding-16">Fines de semana</li>
-                        <li class="w3-padding-16"><h2>USD $ <br class="w3-hide-medium w3-hide-large">20</h2><span class="w3-opacity">mensual</span></li>
-                        <li class="w3-light-grey w3-padding-24"><a href="https://docs.google.com/forms/d/e/1FAIpQLSd07crRq8LFDYI1t3Gz8h6a00VpsDZ52N7zKyBr1GjqwkfidA/viewform?usp=sf_link" target="_blank" class="w3-button w3-amber w3-padding-large w3-hover-black w3-round-large">Aplica</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- Listo -->
-    <div class="w3-amber">
-        <div class="w3-container w3-content w3-padding-64 w3-center" style="max-width:800px">
-            <br><br>
-            <h1 class="w3-hide-small">¿Quieres cambiar tu vida?</h1>
-            <h1 class="w3-hide-medium w3-hide-large w3-xlarge">¿Quieres cambiar tu vida?</h1>
-            <br>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd07crRq8LFDYI1t3Gz8h6a00VpsDZ52N7zKyBr1GjqwkfidA/viewform?usp=sf_link" target="_blank" class="w3-button w3-black w3-padding-large w3-round-large w3-margin-top w3-hover-dark-grey" style="min-width: 250px;">
-                <b class="w3-large">Aplica</b>
-            </a>
-            <br><br>
-        </div>
-    </div>
-
-
-    <!-- The Contact Section -->
-    <div class="w3-black">
-        <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-            <h2>Contactanos</h2>
-            <hr class="w3-opacity">
-            <p class="w3-center">Aclara todas tus dudas. Envíanos un mensaje</p>
-            <div class="w3-row w3-padding-32">
-                <div class="w3-col m6 w3-large w3-margin-bottom">
-                    <p><i class="fa fa-map-marker w3-xlarge" style="width:30px"></i> Caracas, VEN</p>
-                    <p><a href="https://wa.me/+584125227013?text=Estoy%20interesado%20en%20el%20curso%20de%20ingles" target="_blank"><i class="fa fa-phone w3-xlarge" style="width:30px"></i> Whatsapp: +58 4125227013</a></p>
-                    <p><i class="fa fa-envelope w3-xlarge" style="width:30px"></i> infoinglesclass@gmail.com</p>
-                </div>
-                <div class="w3-col m6">
-                    <form name="msg-form">
-                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email o Whatsapp" required="" name="Email" id="Email"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required="" name="Message" id="Message"></p>
-                        <button class="w3-button w3-amber w3-padding-large w3-round-large w3-section w3-right" type="submit">Enviar Mensaje</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Footer -->
-    <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
-        &nbsp;&nbsp;
-        <a href="https://www.facebook.com/inglesclass.academy" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>&nbsp;&nbsp;
-        <a href="https://www.instagram.com/inglesclass_academy/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>&nbsp;&nbsp;
-        <a href="https://twitter.com/class_ingles" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>&nbsp;&nbsp;
-        <p class="w3-medium">InglesClass @ 2022</p>
-    </footer>
-
-    
-<!-- End Page Content -->
-</div>
-
-
-<!-- Modal -->
-<div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-        <header class="w3-container w3-amber">
-            <span onclick="document.getElementById('id01').style.display='none'"
-            class="w3-button w3-display-topright w3-xlarge">&times;</span>
-            <h2>¡Mensaje enviado!</h2>
-        </header>
-        <div class="w3-container w3-white">
-            <p>Responderemos tus dudas a travez de tu Email o Whatsapp ingresado.</p>
-            <p>¡Gracias por tu interes, estás a punto de aprender inglés y lograr grandes cosas.</p>
-        </div>
-    </div>
-</div>
+<br>
+<br>
 
 <script>
 
-function acordion(id) {
-    var x = document.getElementById(id);
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-        x.previousElementSibling.className = 
-        x.previousElementSibling.className.replace("w3-black", "w3-dark-grey");
-    } else { 
-        x.className = x.className.replace(" w3-show", "");
-        x.previousElementSibling.className = 
-        x.previousElementSibling.className.replace("w3-dark-grey", "w3-black");
-    }
-}
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxx7jawAAXiKrCttmBPRFMLNR2InnzLGYxfXyf8eY57hdR7IJ7onoJvYAJYiwPR5-wH/exec'
+const form = document.forms['submit-form']
 
-// enviar mensaje
-const scriptURL = 'https://script.google.com/macros/s/AKfycbycnrwd0sQKEPPInciMmZBQU49NTNeYduLQCaUG_p-Uqw6ralJrJlwkcqlrX2TZr1Br/exec'
-const form = document.forms['msg-form']
-form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+let btn2 = document.getElementById("obtener");
+let btn1 = document.getElementById("guardar");
+
+btn1.addEventListener("click", function(event){
+    event.preventDefault()
+    btn1.classList.add("w3-disabled")
+    btn2.classList.add("w3-disabled")
+    console.log('send')
+    const formData = new FormData(form);
+    fetch(scriptURL, { method: 'POST', body: formData})
     .then(response => response.json())
-    .then(json => console.log('Success!', json))
+    .then((data) => {
+        btn2.classList.remove("w3-disabled")
+        btn1.classList.remove("w3-disabled")
+        console.log('Success!', json)
+    })
     .catch(error => console.error('Error!', error.message))
-    document.getElementById('id01').style.display='block'
-    document.getElementById("Email").value="";
-    document.getElementById("Message").value="";
 })
 
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-    } else { 
-    x.className = x.className.replace(" w3-show", "");
-    }
-}
+btn2.addEventListener("click", function(event){
+    event.preventDefault()
+    btn1.classList.add("w3-disabled")
+    btn2.classList.add("w3-disabled")
+    let num = document.getElementById("num").value
+    console.log(num)
+    fetch(scriptURL, { method: 'GET'})
+    .then(response => response.json())
+    .then((data) => { 
+        console.log('Success!', data)
+        let obj = data.values
+        console.log('array', obj)
 
-// When the user clicks anywhere outside of the modal, close it
-var modal = document.getElementById('ticketModal');
-window.onclick = function(event) {
-    if (event.target == modal) {
-    modal.style.display = "none";
-    }
-}
+        let pos = num - 2;
+        document.getElementById("nombre").value = obj[pos][0]
+        document.getElementById("apellido").value = obj[pos][1]
+
+        btn2.classList.remove("w3-disabled")
+        btn1.classList.remove("w3-disabled")
+    })
+    .catch(error => console.error('Error!', error.message))
+})
+
 </script>
-
-
 </body>
 </html>
