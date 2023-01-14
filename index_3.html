@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Bridge</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body class="w3-light-gray">
+
+<div class="w3-container w3-content w3-white w3-round-xlarge w3-border w3-center" style="max-width: 500px; margin-top: 30px; padding: 50px; padding-bottom: 50px;">
+    <div style="margin-bottom: 50px;"><img src="https://static.wixstatic.com/media/41022f_b3ed4262b4b941eaad3ef84d60fa54e8~mv2.png/v1/fill/w_366,h_332,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/institute%203.png" style="max-width: 150px;"></div>
+    <h2>¡Bienvenido!</h2>
+    <h3 class="w3-text-grey w3-large">Ingresa tus datos para acceder</h3>
+    <form class="w3-container w3-left-align" name="submit-form">
+        <p>
+        <input class="w3-input" type="text" name="nombre" id="nombre">
+        <label>Nombre</label>
+        </p>
+        <p>
+        <input class="w3-input" type="text" name="apellido" id="apellido">
+        <label>Apellido</label>
+        </p>
+        <p>
+        <input class="w3-input" type="text" name="num" id="num">
+        <label>Posición</label>
+        </p>
+        <br>
+        <p class="w3-center"><button class="w3-btn w3-blue w3-round" id="guardar">Guardar</button>&nbsp;&nbsp;<button class="w3-btn w3-blue w3-round" id="obtener">Obtener</button></p>
+    </form>
+</div>
+<br>
+<br>
+
+<script>
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxx7jawAAXiKrCttmBPRFMLNR2InnzLGYxfXyf8eY57hdR7IJ7onoJvYAJYiwPR5-wH/exec'
+const form = document.forms['submit-form']
+
+let btn2 = document.getElementById("obtener");
+let btn1 = document.getElementById("guardar");
+
+btn1.addEventListener("click", function(event){
+    event.preventDefault()
+    btn1.classList.add("w3-disabled")
+    btn2.classList.add("w3-disabled")
+    console.log('send')
+    const formData = new FormData(form);
+    fetch(scriptURL, { method: 'POST', body: formData})
+    .then(response => response.json())
+    .then((data) => {
+        btn2.classList.remove("w3-disabled")
+        btn1.classList.remove("w3-disabled")
+        console.log('Success!', json)
+    })
+    .catch(error => console.error('Error!', error.message))
+})
+
+btn2.addEventListener("click", function(event){
+    event.preventDefault()
+    btn1.classList.add("w3-disabled")
+    btn2.classList.add("w3-disabled")
+    let num = document.getElementById("num").value
+    console.log(num)
+    fetch(scriptURL, { method: 'GET'})
+    .then(response => response.json())
+    .then((data) => { 
+        console.log('Success!', data)
+        let obj = data.values
+        console.log('array', obj)
+
+        let pos = num - 2;
+        document.getElementById("nombre").value = obj[pos][0]
+        document.getElementById("apellido").value = obj[pos][1]
+
+        btn2.classList.remove("w3-disabled")
+        btn1.classList.remove("w3-disabled")
+    })
+    .catch(error => console.error('Error!', error.message))
+})
+
+</script>
+</body>
+</html>
